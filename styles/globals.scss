@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .main-login {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        line-height: 0;
+
+        .auth-container {
+            display: flex;
+            width: 43vw;
+            height: 100vh;
+
+            .auth-img {
+                width: 100%;
+                height: 100vh;
+                object-fit: cover;
+            }
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 57vw;
+            height: auto;
+            
+            .login {
+                display: flex;
+                width: 34%;
+                background-color: aqua;
+            }
+        }
+    }
+}
