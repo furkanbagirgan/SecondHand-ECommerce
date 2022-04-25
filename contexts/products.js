@@ -5,9 +5,7 @@ const ProductsContext = React.createContext();
 const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState({});
 
-  const getAllProducts = async () => {
-    
-  };
+  const getAllProducts = async () => {};
 
   return (
     <ProductsContext.Provider

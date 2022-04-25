@@ -3,14 +3,14 @@ import Head from "next/head";
 
 import LoginPage from "../components/Login/LoginPage";
 
-function Login() {
+function Register() {
   useEffect(() => {}, []);
 
   //Here, the components of the first opened page are printed on the screen.
   return (
     <>
       <Head>
-        <title>İkinci El Project | Giriş Yap</title>
+        <title>İkinci El Project | Kayıt Ol</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <LoginPage />
@@ -18,4 +18,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
