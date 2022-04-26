@@ -4,9 +4,11 @@ import { useFormik } from "formik";
 
 import { LoginSchema } from "../../constants/YupSchema";
 import styles from "./login.module.scss";
+import LoadingIcon from './../../constants/icons/Loading';
 
 function LoginForm() {
   const [loading, setLoading] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   useEffect(()=>{
     /*const userMode=JSON.parse(localStorage.getItem("mode"));
@@ -24,24 +26,23 @@ function LoginForm() {
   },[]);
 
   //Here, the formic hook and the form that will appear on the screen are linked to the formic hook.
-  const { handleSubmit, handleChange, values, errors } = useFormik({
-    initialValues: {
+  const { handleSubmit,handleChange,handleBlur,values,errors,touched } = useFormik({
+    initialValues:{
       email: "",
-      password: "",
+      password: ""
     },
     validationSchema: LoginSchema,
-    onSubmit: (auth) => {
+    onSubmit: (values) => {
       setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        alert(
-          JSON.stringify(
-            "Hoşgeldiniz " + auth.userName + ", Kaydınız başarıyla oluşturuldu."
-          )
-        );
-      }, 3000);
+      console.log(values);
+      setLoading(false);
     },
   });
+
+  const formSubmit= ()=>{
+    setShowError(true);
+    handleSubmit();
+  }
 
   return (
     <div className={styles.form}>
@@ -50,8 +51,8 @@ function LoginForm() {
         <span>Fırsatlardan yararlanmak için giriş yap!</span>
       </div>
       <div className={styles.formMiddle}>
-        <div className={errors.email ? `${styles.formGroup} ${styles.formError}` : styles.formGroup}>
-          <label className="title">
+        <div className={(errors.email && touched.email && values.email!=="") ? `${styles.formGroup} ${styles.formError}` : styles.formGroup}>
+          <label className={styles.title}>
             Email
           </label>
           <input
@@ -60,10 +61,12 @@ function LoginForm() {
             placeholder="Email@example.com"
             value={values.email}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
+          {(showError && errors.email) && <span>{errors.email}</span>}
         </div>
-        <div className={errors.password ? `${styles.formGroup} ${styles.formError}` : styles.formGroup}>
-          <label className="title">
+        <div className={(errors.password && touched.password && values.password!=="") ? `${styles.formGroup} ${styles.formError}` : styles.formGroup}>
+          <label className={styles.title}>
             Şifre
           </label>
           <input
@@ -72,24 +75,27 @@ function LoginForm() {
             placeholder=""
             value={values.password}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
+          {(showError && errors.password) && <span>{errors.password}</span>}
+          <div className={styles.forgetPassword}>Şifremi Unuttum</div>
         </div>
         <div className={`${styles.formGroup} ${styles.formButton}`}>
           <button
-            className="loginButton"
+            className={styles.loginButton}
             type="submit"
-            onClick={handleSubmit}
+            onClick={()=>formSubmit()}
             disabled={loading}
           >
-          {loading ? <LoadingIcon size={30} color="white" /> : "KAYIT OL"}
+          {loading ? <LoadingIcon size={30} color="white"/> : "Giriş"}
           </button>
         </div>
       </div>
       <div className={styles.formBottom}>
         <span>
-          Hesabın yok mu? 
+          Hesabın yok mu?
           <Link href="/register">
-            <a className="register">Üye Ol</a>
+            <a className={styles.register}> Üye Ol</a>
           </Link>
         </span>
       </div>

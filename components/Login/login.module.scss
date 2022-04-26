@@ -1,4 +1,5 @@
 @import "../../styles/_mixin";
+
 .main {
   display: flex;
   flex-direction: row;
@@ -56,7 +57,7 @@
     .form {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
       width: min(80%, 569px);
       height: 554px;
@@ -75,7 +76,7 @@
 
       @include mobile() {
         width: min(90%, 400px);
-        height: min(66%, 554px);
+        height: min(70%, 554px);
       }
 
       .formTop {
@@ -84,6 +85,11 @@
         justify-content: space-around;
         align-items: center;
         height: 73px;
+        margin-bottom: 50px;
+
+        @include mobileSmall() {
+          margin-bottom: 30px;
+        }
 
         h1 {
           font-size: 32px;
@@ -102,61 +108,110 @@
       .formMiddle {
         display: flex;
         flex-direction: column;
-        padding-left: 9px;
-        padding-right: 9px;
+        align-items: center;
+        width: 100%;
 
         .formGroup {
           display: flex;
           flex-direction: column;
+          align-items: center;
+          margin-bottom: 15px;
+          width: 389px;
 
-          label.title {
+          @include tablet() {
+            width: max(85%,315px);
+          }
+
+          @include mobile() {
+            width: min(85%,315px);
+          }
+
+          .title {
+            width: 100%;
+            text-align: left;
             font-size: 15px;
             line-height: 20px;
             letter-spacing: 0px;
             font-weight: normal;
             color: #525252;
             margin-bottom: 5px;
-            margin-top: 5px;
           }
 
           input[type="text"],
           input[type="password"] {
-            border: 2px solid #8e8e8e;
+            border: 0px solid #8e8e8e;
             height: 45px;
-            background-color: #f4f4f4;
-            border-radius: 6px;
+            background-color: #F4F4F4;
+            border-radius: 8px;
             padding: 0 15px;
             font-size: 16px;
             line-height: 22px;
             letter-spacing: 0px;
             color: #3e3e3e;
             outline: none;
-            width: 90%;
+            width: 100%;
 
             &::placeholder {
               color: #99a0a7;
             }
+
+            &:focus {
+              border: 2px solid #4B9CE2;
+              background-color: #F0F8FF;
+            }
+          }
+
+          span {
+            width: 100%;
+            text-align: left;
+            color: red;
+            font-size: 12px;
+            line-height: 16px;
+            margin-top: 5px;
+            padding-left: 5px;
+          }
+
+          .forgetPassword {
+            width: 100%;
+            font-size: 12px;
+            line-height: 16px;
+            color: #B1B1B1;
+            text-align: right;
+            margin-top: 5px;
           }
 
           &.formButton {
-            margin-top: 5px;
+            margin-top: 15px;
 
-            button {
-              width: 90%;
+            @include mobileSmall() {
+              margin-top: 0px;
+            }
+
+            .loginButton {
+              width: 100%;
               height: 45px;
               border: 0;
-              border-radius: 5px;
+              border-radius: 8px;
               font-size: 18px;
               line-height: 24px;
               color: #FFF;
               background-color: #4B9CE2;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              &:hover{
+                cursor: pointer;
+                opacity: 0.6;
+              }
             }
           }
 
           &.formError {
             input[type="text"],
             input[type="password"] {
-              border-color: red;
+              border: 2px solid #F77474;
+              background-color: #FFF2F2;
 
               &::placeholder {
                 color: #99a0a7;
@@ -171,8 +226,15 @@
         line-height: 20px;
         font-weight: normal;
         color: #525252;
+        margin-top: 5px;
+
+        @include mobileSmall() {
+          margin-top: 10px;
+        }
 
         .register {
+          text-decoration: none;
+          font-weight: bold;
           color: #4b9ce2;
         }
       }
