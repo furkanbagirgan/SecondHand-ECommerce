@@ -1,12 +1,13 @@
-import Link from "next/link";
-
 import Layout from "../components/Layout";
 import Products from "../components/Products/Products";
+import { ProductsProvider } from "../contexts/products";
 
 function HomePage() {
   return (
     <Layout>
-      <Products />
+      <ProductsProvider>
+        <Products />
+      </ProductsProvider>
     </Layout>
   );
 }

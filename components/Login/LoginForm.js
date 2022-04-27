@@ -1,29 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useFormik } from "formik";
+import { useRouter } from 'next/router'
 
 import { LoginSchema } from "../../constants/YupSchema";
 import styles from "./login.module.scss";
 import LoadingIcon from './../../constants/icons/Loading';
+import { useAuth } from "../../contexts/auth";
+import triggerToast from './../../constants/toastify';
 
 function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [showError, setShowError] = useState(false);
-
-  useEffect(()=>{
-    /*const userMode=JSON.parse(localStorage.getItem("mode"));
-    if(userMode){
-      if(userMode==="light"){
-        setMode(true);
-      }
-      else{
-        setMode(false);
-      }
-    }
-    else{
-      localStorage.setItem("mode",JSON.stringify("light"));
-    }*/
-  },[]);
+  const {authLogin} = useAuth();
+  const router = useRouter();
 
   //Here, the formic hook and the form that will appear on the screen are linked to the formic hook.
   const { handleSubmit,handleChange,handleBlur,values,errors,touched } = useFormik({
@@ -32,9 +22,21 @@ function LoginForm() {
       password: ""
     },
     validationSchema: LoginSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       setLoading(true);
-      console.log(values);
+      const res= await authLogin(values.email,values.password);
+      if(res === 200){
+        triggerToast('success','Giriş başarılı anasayfaya yönlendiriliyorsunuz!');
+        setTimeout(()=>{
+          router.replace("/");
+        },3000);
+      }
+      else if (res === 400) {
+        triggerToast('error', 'Emailiniz veya parolanız hatalı!');
+      }
+      else {
+        triggerToast('error', 'Bir hata meydana geldi!');
+      }
       setLoading(false);
     },
   });

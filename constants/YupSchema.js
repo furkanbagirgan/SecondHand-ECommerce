@@ -10,7 +10,7 @@ export const LoginSchema = yup.object().shape({
     .string()
     .typeError("Şifrenizde sadece \"@/./+/-/_\" kullanabilirsin")
     .min(8, "Şifreniz 8 karakterden az olamaz")
-    .max(32, "Şifreniz 32 karakterden fazla olamaz")
+    .max(20, "Şifreniz 20 karakterden fazla olamaz")
     .required("Şifre alanı zorunludur"),
 });
 
@@ -23,6 +23,6 @@ export const RegisterSchema = yup.object().shape({
     .string()
     .typeError("Şifrenizde sadece \"@/./+/-/_\" kullanabilirsin")
     .min(8, "Şifreniz 8 karakterden az olamaz")
-    .max(32, "Şifreniz 32 karakterden fazla olamaz")
+    .max(20, "Şifreniz 20 karakterden fazla olamaz")
     .required("Şifre alanı zorunludur"),
 });

@@ -1,13 +1,19 @@
 import React from "react";
+import { ToastContainer } from 'react-toastify';
 
-import { ProductsProvider } from "../contexts/products";
 import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ProductsProvider>
+    <>
       <Component {...pageProps} />
-    </ProductsProvider>
+      <ToastContainer
+        autoClose={3000}
+        theme="colored"
+        className="toastify"
+        hideProgressBar
+        pauseOnFocusLoss={false}/>
+    </>
   );
 }
 

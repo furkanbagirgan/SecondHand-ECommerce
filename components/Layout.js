@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Head from "next/head";
 
-import Header from "./Header/Header";
+import Navbar from "./Header/Navbar";
 
 function Layout({ children }) {
   return (
@@ -11,7 +10,7 @@ function Layout({ children }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <main>
-        <Header />
+        <Navbar />
         {children}
       </main>
     </>
