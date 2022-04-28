@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { setLoginService,setRegisterService } from './../services/authService';
+import { setLoginService,setRegisterService } from '../services/authService';
 
-const AuthContext = React.createContext();
+const UserContext = React.createContext();
 
-const AuthProvider = ({ children }) => {
+const UserProvider = ({ children }) => {
 
   const authLogin = async(email,password) => {
     const res= await setLoginService(email,password);
@@ -16,19 +16,19 @@ const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider
+    <UserContext.Provider
       value={{
         authLogin,
         authRegister
       }}
     >
       {children}
-    </AuthContext.Provider>
+    </UserContext.Provider>
   );
 };
 
 function useAuth() {
-  return useContext(AuthContext);
+  return useContext(UserContext);
 }
 
-export { AuthProvider, AuthContext, useAuth };
+export { UserProvider, UserContext, useAuth };

@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { RegisterSchema } from "../../constants/YupSchema";
 import styles from "./register.module.scss";
 import LoadingIcon from './../../constants/icons/Loading';
-import { useAuth } from "../../contexts/auth";
+import { useAuth } from "../../contexts/user";
 import triggerToast from './../../constants/toastify';
 
 function RegisterForm() {
@@ -29,7 +29,7 @@ function RegisterForm() {
         triggerToast('success','Kaydınız başarılı anasayfaya yönlendiriliyorsunuz!');
         setTimeout(()=>{
           router.replace("/");
-        },3000);
+        },2000);
       } else if (res === 402) {
         triggerToast('error', 'Bu email zaten sistemde kayıtlı!');
       } else if (res === 400) {
@@ -80,7 +80,6 @@ function RegisterForm() {
             onBlur={handleBlur}
           />
           {(showError && errors.password) && <span>{errors.password}</span>}
-          <div className={styles.forgetPassword}>Şifremi Unuttum</div>
         </div>
         <div className={`${styles.formGroup} ${styles.formButton}`}>
           <button

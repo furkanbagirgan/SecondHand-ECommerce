@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { LoginSchema } from "../../constants/YupSchema";
 import styles from "./login.module.scss";
 import LoadingIcon from './../../constants/icons/Loading';
-import { useAuth } from "../../contexts/auth";
+import { useAuth } from "../../contexts/user";
 import triggerToast from './../../constants/toastify';
 
 function LoginForm() {
@@ -29,7 +29,7 @@ function LoginForm() {
         triggerToast('success','Giriş başarılı anasayfaya yönlendiriliyorsunuz!');
         setTimeout(()=>{
           router.replace("/");
-        },3000);
+        },2000);
       }
       else if (res === 400) {
         triggerToast('error', 'Emailiniz veya parolanız hatalı!');

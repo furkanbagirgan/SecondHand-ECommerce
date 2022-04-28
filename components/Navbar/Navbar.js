@@ -1,10 +1,10 @@
 import React from "react";
 import { useRouter } from 'next/router'
 
-import styles from "./header.module.scss";
+import styles from "./navbar.module.scss";
 import Logo from "../../constants/icons/Logo";
 
-function Header() {
+function Navbar() {
   const router = useRouter();
 
   return (
@@ -15,4 +15,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;

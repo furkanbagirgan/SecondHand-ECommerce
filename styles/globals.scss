@@ -7,6 +7,66 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif !important;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 80px;
+      background-color: #FFF;
+
+      @include mobile() {
+        height: 60px;
+      }
+
+      .navbarContent{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 77.08%;
+        height: 100%;
+
+        @include mobile() {
+          width: 100%;
+        }
+
+        .logo {
+          width: fit-content;
+          height: fit-content;
+
+          .logoImg {
+            width: 128px;
+            height: 42px;
+    
+            @include mobile() {
+              width: 99px;
+              height: 32px;
+            }
+          }
+        }
+
+        button {
+          padding-block: 10px;
+          padding-inline: 18px;
+          font-size: 15px;
+          font-weight: bold;
+          line-height: 20px;
+          color: #4B9CE2;
+          background-color: #F0F8FF;
+          border: 0px;
+          border-radius: 8px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 }
 
 .Toastify__toast-container--top-right {
