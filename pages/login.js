@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 import { UserProvider } from "../contexts/user";
 import LoginPage from "../components/Login/LoginPage";
-import { getCookie } from './../utilies/cookies';
+import { getCookie } from "./../utilies/cookies";
 
 function Login() {
   const router = useRouter();

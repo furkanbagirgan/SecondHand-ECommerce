@@ -1,40 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
-@import 'react-toastify/dist/ReactToastify.css';
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+@import "react-toastify/dist/ReactToastify.css";
 @import "./_mixin";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Nunito', sans-serif !important;
+  font-family: "Nunito", sans-serif !important;
 
   .main {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    line-height: 0;
+    align-items: center;
+    background-color: #f2f2f2;
 
     .navbar {
       display: flex;
       justify-content: center;
       width: 100%;
       height: 80px;
-      background-color: #FFF;
+      background-color: #fff;
 
       @include mobile() {
         height: 60px;
       }
 
-      .navbarContent{
+      .navbarContent {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 77.08%;
+        width: 77.1%;
         height: 100%;
 
         @include mobile() {
-          width: 100%;
+          width: 94.66%;
         }
 
         .logo {
@@ -44,7 +46,7 @@
           .logoImg {
             width: 128px;
             height: 42px;
-    
+
             @include mobile() {
               width: 99px;
               height: 32px;
@@ -52,18 +54,134 @@
           }
         }
 
-        button {
-          padding-block: 10px;
-          padding-inline: 18px;
-          font-size: 15px;
-          font-weight: bold;
-          line-height: 20px;
-          color: #4B9CE2;
-          background-color: #F0F8FF;
-          border: 0px;
-          border-radius: 8px;
-          margin-left: 10px;
+        .navbarButtons {
+          display: flex;
+
+          button {
+            padding-block: 10px;
+            padding-inline: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 20px;
+            color: #4b9ce2;
+            background-color: #f0f8ff;
+            border: 0px;
+            border-radius: 8px;
+            margin-left: 10.5px;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            @include mobile() {
+              &:nth-child(2) {
+                display: none;
+              }
+            }
+
+            .icon {
+              margin-right: 5px;
+            }
+          }
+
+          .addButton {
+            display: none;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            @include mobile() {
+              display: block;
+            }
+
+            .icon {
+              margin-right: 0px;
+            }
+          }
         }
+      }
+    }
+
+    .banner {
+      width: 100%;
+      height: fit-content;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+
+      @include mobile() {
+        margin-top: 10px;
+      }
+
+      .bannerContent {
+        width: 77.1%;
+
+        @include mobile() {
+          width: 94.66%;
+        }
+
+        .bannerImg {
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .category {
+      width: 100%;
+      height: 41.4px;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+
+      @include mobile() {
+        height: 33.2px;
+        margin-top: 20px;
+      }
+
+      .categoryContent {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 77.1%;
+        height: 100%;
+        border-bottom: 1px solid #e0e0e0;
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        @include mobile() {
+          width: 94.66%;
+        }
+
+        span {
+          font-size: 18px;
+          line-height: 24px;
+          color: #525252;
+          font-weight: 600;
+          height: 100%;
+          margin-left: 25px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:first-child {
+            margin-left: 0px;
+          }
+
+          &.active {
+            color: #4b9ce2;
+            border-bottom: 2px solid #4b9ce2;
+          }
+        }
+      }
+      .categoryContent::-webkit-scrollbar {
+        display: none;
       }
     }
   }
@@ -71,7 +189,7 @@
 
 .Toastify__toast-container--top-right {
   top: 90px !important;
-  right:0;
+  right: 0;
   width: 321px;
   height: 60px;
   margin: 0px 10px;
@@ -85,16 +203,16 @@
 .Toastify__toast-theme--colored.Toastify__toast--success {
   font-size: 16px !important;
   line-height: 23px;
-  box-shadow: 0px 3px 12px #1E36482E;;
+  box-shadow: 0px 3px 12px #1e36482e;
   border-radius: 8px;
 }
 .Toastify__toast-theme--colored.Toastify__toast--success {
-  background-color: #F1FFF0;
-  color: #46AF32 !important;
+  background-color: #f1fff0;
+  color: #46af32 !important;
 }
 .Toastify__toast-theme--colored.Toastify__toast--error {
-  background-color: #FFE5E5;
-  color: #F77474 !important;
+  background-color: #ffe5e5;
+  color: #f77474 !important;
 }
 .Toastify__close-button {
   display: none;

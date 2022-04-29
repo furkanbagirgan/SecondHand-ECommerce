@@ -1,10 +1,10 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-const triggerToast = (type, message) => {
+const toastMessage = (type, message) => {
   switch (type) {
-    case 'error':
-      toast.error(message, {
-        position: 'top-right',
+    case "success":
+      toast.success(message, {
+        position: "top-right",
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -13,8 +13,8 @@ const triggerToast = (type, message) => {
       break;
 
     default:
-      toast.success(message, {
-        position: 'top-right',
+      toast.error(message, {
+        position: "top-right",
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -24,4 +24,4 @@ const triggerToast = (type, message) => {
   }
 };
 
-export default triggerToast;
+export default toastMessage;

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "./login.module.scss";
-import Logo from "../../constants/icons/Logo";
+import LogoIcon from "../../constants/icons/LogoIcon";
 import LoginForm from "./LoginForm";
 import loginBanner from "../../assets/loginBanner.png";
 
@@ -18,7 +18,7 @@ function LoginPage() {
       </div>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Logo style={styles.logoImg} />
+          <LogoIcon style={styles.logoImg} />
         </div>
         <LoginForm />
       </div>

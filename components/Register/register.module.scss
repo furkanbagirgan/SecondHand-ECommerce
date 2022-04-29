@@ -119,11 +119,11 @@
           width: 389px;
 
           @include tablet() {
-            width: max(85%,315px);
+            width: max(85%, 315px);
           }
 
           @include mobile() {
-            width: min(85%,315px);
+            width: min(85%, 315px);
           }
 
           .title {
@@ -141,7 +141,7 @@
           input[type="password"] {
             border: 0px;
             height: 45px;
-            background-color: #F4F4F4;
+            background-color: #f4f4f4;
             border-radius: 8px;
             padding: 0 15px;
             font-size: 16px;
@@ -156,8 +156,8 @@
             }
 
             &:focus {
-              border: 2px solid #4B9CE2;
-              background-color: #F0F8FF;
+              border: 2px solid #4b9ce2;
+              background-color: #f0f8ff;
             }
           }
 
@@ -185,13 +185,13 @@
               border-radius: 8px;
               font-size: 18px;
               line-height: 24px;
-              color: #FFF;
-              background-color: #4B9CE2;
+              color: #fff;
+              background-color: #4b9ce2;
               display: flex;
               justify-content: center;
               align-items: center;
 
-              &:hover{
+              &:hover {
                 cursor: pointer;
                 opacity: 0.8;
               }
@@ -201,8 +201,8 @@
           &.formError {
             input[type="text"],
             input[type="password"] {
-              border: 2px solid #F77474;
-              background-color: #FFF2F2;
+              border: 2px solid #f77474;
+              background-color: #fff2f2;
 
               &::placeholder {
                 color: #99a0a7;

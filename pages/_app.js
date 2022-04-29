@@ -1,5 +1,5 @@
 import React from "react";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 import "../styles/globals.scss";
 
@@ -12,7 +12,8 @@ function MyApp({ Component, pageProps }) {
         theme="colored"
         className="toastify"
         hideProgressBar
-        pauseOnFocusLoss={false}/>
+        pauseOnFocusLoss={false}
+      />
     </>
   );
 }

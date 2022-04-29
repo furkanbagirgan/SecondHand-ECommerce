@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "./register.module.scss";
-import Logo from "../../constants/icons/Logo";
+import LogoIcon from "../../constants/icons/LogoIcon";
 import RegisterForm from "./RegisterForm";
 import loginBanner from "../../assets/loginBanner.png";
 
@@ -18,7 +18,7 @@ function RegisterPage() {
       </div>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Logo style={styles.logoImg} />
+          <LogoIcon style={styles.logoImg} />
         </div>
         <RegisterForm />
       </div>

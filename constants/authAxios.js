@@ -13,6 +13,6 @@ export default axios.create({
 });
 
 export const axiosAuthURL = {
-    login: "/auth/local",
-	register: "/auth/local/register",
+  category: "/categories",
+  product: "/products",
 };

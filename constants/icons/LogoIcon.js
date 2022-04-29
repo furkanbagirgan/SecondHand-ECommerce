@@ -1,7 +1,7 @@
 import React from "react";
 
 //Here, the dark icon in which the left section will be located is set.
-const Logo = ({ style }) => (
+const LogoIcon = ({ style }) => (
   <svg className={style} viewBox="0 0 224.489 73.195">
     <g
       id="Group_6607"
@@ -145,4 +145,4 @@ const Logo = ({ style }) => (
   </svg>
 );
 
-export default Logo;
+export default LogoIcon;
