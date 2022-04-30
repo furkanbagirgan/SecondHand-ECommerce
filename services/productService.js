@@ -12,25 +12,27 @@ export const seCategoryService = async () => {
     });
 };
 
-export const setProductService = async () => {
-  return await axios
-    .post(axiosURL.product, {
-      username: `${email}`,
-      email: `${email}`,
-      password: `${password}`,
-    })
+export const setProductService = async (categoryId) => {
+  if(categoryId){
+    return await axios
+    .get(axiosURL.product+"?category="+String(categoryId))
     .then((res) => {
-      setCookie("authToken", res.data.jwt, 1);
-      return res.status;
+      console.log(res);
+      return res.data;
     })
     .catch((err) => {
-      if (
-        err.response.data.message[0].messages[0].message ===
-        "Email is already taken."
-      ) {
-        return 402;
-      } else {
-        return 400;
-      }
+      return err.response.status;
     });
+  }
+  else{
+    return await axios
+    .get(axiosURL.product)
+    .then((res) => {
+      console.log(res);
+      return res.data;
+    })
+    .catch((err) => {
+      return err.response.status;
+    });
+  }
 };

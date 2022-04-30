@@ -4,30 +4,58 @@ import { setCategoryService,setProductService } from "../services/authService";
 const ProductContext = React.createContext();
 
 const ProductProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState("Hepsi");
 
-  const getAllProducts = async () => {
-    const res = await setProductService();
-    setProducts(res);
-  };
-
-  const getAllCategories = async () => {
+  const getAllCategories = async (categoryName) => {
     const res = await setCategoryService();
-    setCategories(res);
-    setActiveCategory("Hepsi");
-  };
-
-  const changeCategory = (category) => {
-    setActiveCategory(category);
-    if(category !=="Hepsi"){
-      const filtered=products.filter((product) => product.category.name === category);
-      setFilteredProducts(filtered);
+    if(isNaN(res)){
+      if(categoryName){
+        setCategories(res);
+        setActiveCategory(categoryName);
+        const categoryId=0;
+        res.forEach(element => {
+          if(element.name===categoryName){
+            categoryId=element.id;
+          }
+        });
+        await changeCategory(categoryName,categoryId);
+        return 1;
+      }
+      else{
+        setCategories(res);
+        setActiveCategory("Hepsi");
+        await changeCategory("Hepsi",0);
+        return 1;
+      }
     }
     else{
-      setFilteredProducts(products);
+      return res;
+    }
+  };
+
+  const changeCategory = async(categoryName,categoryId) => {
+    setActiveCategory(categoryName);
+    if(categoryName !=="Hepsi"){
+      const filtered=await setProductService(categoryId);
+      if(Array.isArray(filtered)){
+        setFilteredProducts(filtered);
+        return 1;
+      }
+      else{
+        return filtered;
+      }
+    }
+    else{
+      const allProducts=await setProductService();
+      if(isNaN(allProducts)){
+        setFilteredProducts(allProducts);
+        return 1;
+      }
+      else{
+        return allProducts;
+      }
     }
   }
 
@@ -37,7 +65,6 @@ const ProductProvider = ({ children }) => {
         filteredProducts,
         categories,
         activeCategory,
-        getAllProducts,
         getAllCategories,
         changeCategory
       }}

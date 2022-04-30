@@ -43,7 +43,6 @@ export const setCategoryService = async () => {
   return await axios
     .get(axiosURL.category)
     .then((res) => {
-      console.log(res);
       return res.data;
     })
     .catch((err) => {
@@ -51,14 +50,25 @@ export const setCategoryService = async () => {
     });
 };
 
-export const setProductService = async () => {
-  return await axios
-    .get(axiosURL.product)
+export const setProductService = async (categoryId) => {
+  if(categoryId){
+    return await axios
+    .get(axiosURL.product+"?category="+String(categoryId))
     .then((res) => {
-      console.log(res);
       return res.data;
     })
     .catch((err) => {
       return err.response.status;
     });
+  }
+  else{
+    return await axios
+    .get(axiosURL.product)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      return err.response.status;
+    });
+  }
 };
