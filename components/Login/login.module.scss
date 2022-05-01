@@ -12,7 +12,7 @@
     width: fit-content;
     height: 100vh;
 
-    @include mobile() {
+    @include tabletSmall() {
       display: none;
     }
 
@@ -33,7 +33,7 @@
     margin: auto;
     background-color: #fbfbfb;
 
-    @include mobile() {
+    @include tabletSmall() {
       width: 100%;
       justify-content: flex-start;
       padding-top: 5vh;
@@ -47,7 +47,7 @@
         width: 224px;
         height: 73px;
 
-        @include mobile() {
+        @include tabletSmall() {
           width: 148px;
           height: 48px;
         }
@@ -66,15 +66,15 @@
       border-radius: 8px;
       margin-bottom: 12vh;
 
-      @include desktopLarge() {
+      @include desktop() {
         margin-bottom: 0vh;
       }
 
-      @include desktop() {
+      @include desktopSmall() {
         width: 80%;
       }
 
-      @include mobile() {
+      @include tabletSmall() {
         width: min(90%, 400px);
         height: min(70%, 554px);
       }
@@ -87,7 +87,7 @@
         height: 73px;
         margin-bottom: 50px;
 
-        @include mobileSmall() {
+        @include mobile() {
           margin-bottom: 30px;
         }
 
@@ -122,7 +122,7 @@
             width: max(85%, 315px);
           }
 
-          @include mobile() {
+          @include tabletSmall() {
             width: min(85%, 315px);
           }
 
@@ -183,7 +183,7 @@
           &.formButton {
             margin-top: 15px;
 
-            @include mobileSmall() {
+            @include mobile() {
               margin-top: 0px;
             }
 
@@ -228,7 +228,7 @@
         color: #525252;
         margin-top: 5px;
 
-        @include mobileSmall() {
+        @include mobile() {
           margin-top: 10px;
         }
 

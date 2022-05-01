@@ -9,7 +9,7 @@
     width: 224px;
     height: 73px;
 
-    @include mobile() {
+    @include tabletSmall() {
       width: 148px;
       height: 48px;
     }

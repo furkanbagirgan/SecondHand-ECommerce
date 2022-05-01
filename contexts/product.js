@@ -49,7 +49,7 @@ const ProductProvider = ({ children }) => {
     }
     else{
       const allProducts=await setProductService();
-      if(isNaN(allProducts)){
+      if(Array.isArray(allProducts)){
         setFilteredProducts(allProducts);
         return 1;
       }

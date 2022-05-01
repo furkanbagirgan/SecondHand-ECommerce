@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./login.module.scss";
 import LogoIcon from "../../constants/icons/LogoIcon";
 import LoginForm from "./LoginForm";
-import loginBanner from "../../assets/loginBanner.png";
+import loginBanner from "../../public/loginBanner.png";
 
 function LoginPage() {
   return (

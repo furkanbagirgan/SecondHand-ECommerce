@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./register.module.scss";
 import LogoIcon from "../../constants/icons/LogoIcon";
 import RegisterForm from "./RegisterForm";
-import loginBanner from "../../assets/loginBanner.png";
+import loginBanner from "../../public/loginBanner.png";
 
 function RegisterPage() {
   return (

@@ -8,18 +8,13 @@
   box-sizing: border-box;
   font-family: "Nunito", sans-serif !important;
 
-  .main {
-    height:100%;
-    width:100%;
-    display: flex;
-    padding-bottom: 8.33vw;
-    flex-direction: column;
-    align-items: center;
+  .main{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: #f2f2f2;
-
-    @include mobile() {
-      padding-bottom: 3.66vw;
-    }
 
     .navbar {
       display: flex;
@@ -27,11 +22,11 @@
       width: 100%;
       height: 80px;
       background-color: #fff;
-
-      @include mobile() {
+  
+      @include tabletSmall() {
         height: 60px;
       }
-
+  
       .navbarContent {
         display: flex;
         flex-direction: row;
@@ -39,29 +34,29 @@
         align-items: center;
         width: 77.1%;
         height: 100%;
-
-        @include mobile() {
+  
+        @include tabletSmall() {
           width: 94.66%;
         }
-
+  
         .logo {
           width: fit-content;
           height: fit-content;
-
+  
           .logoImg {
             width: 128px;
             height: 42px;
-
-            @include mobile() {
+  
+            @include tabletSmall() {
               width: 99px;
               height: 32px;
             }
           }
         }
-
+  
         .navbarButtons {
           display: flex;
-
+  
           button {
             padding-block: 10px;
             padding-inline: 18px;
@@ -76,33 +71,33 @@
             border: 0px;
             border-radius: 8px;
             margin-left: 10.5px;
-
+  
             &:hover {
               cursor: pointer;
             }
-
-            @include mobile() {
+  
+            @include tabletSmall() {
               &:nth-child(2) {
                 display: none;
               }
             }
-
+  
             .icon {
               margin-right: 5px;
             }
           }
-
+  
           .addButton {
             display: none;
-
+  
             &:hover {
               cursor: pointer;
             }
-
-            @include mobile() {
+  
+            @include tabletSmall() {
               display: block;
             }
-
+  
             .icon {
               margin-right: 0px;
             }
@@ -110,7 +105,7 @@
         }
       }
     }
-
+  
     .error {
       display:flex;
       flex-direction :column;
@@ -118,13 +113,14 @@
       align-items: center;
       width: 500px;
       margin-top: 20px;
+      margin-inline: auto;
       padding: 30px;
       background-color: #fff;
       border: 1px solid #4b9ce2;
       border-radius: 8px;
       text-align: start;
-
-      @include mobile() {
+  
+      @include tabletSmall() {
         width: 80%;
         margin-top: 10px;
       }
@@ -132,7 +128,7 @@
       .errorContent {
         width: 128px;
         height: 128px;
-
+  
         .errorImg {
           width: 100%;
         }
@@ -144,43 +140,43 @@
         text-align: center;
       }
     }
-
+  
     .banner {
       width: 100%;
       height: fit-content;
       margin-top: 20px;
       display: flex;
       justify-content: center;
-
-      @include mobile() {
+  
+      @include tabletSmall() {
         margin-top: 10px;
       }
-
+  
       .bannerContent {
         width: 77.1%;
-
-        @include mobile() {
+  
+        @include tabletSmall() {
           width: 94.66%;
         }
-
+  
         .bannerImg {
           border-radius: 8px;
         }
       }
     }
-
+  
     .category {
       width: 100%;
       height: 41.4px;
       display: flex;
       justify-content: center;
       margin-block: 30px;
-
-      @include mobile() {
+  
+      @include tabletSmall() {
         height: 33.2px;
         margin-block: 20px;
       }
-
+  
       .categoryContent {
         display: flex;
         flex-direction: row;
@@ -192,11 +188,11 @@
         overflow-x: scroll;
         -ms-overflow-style: none;
         scrollbar-width: none;
-
-        @include mobile() {
+  
+        @include tabletSmall() {
           width: 94.66%;
         }
-
+  
         span {
           font-size: 18px;
           line-height: 24px;
@@ -204,15 +200,15 @@
           font-weight: 600;
           height: 100%;
           margin-left: 25px;
-
+  
           &:hover {
             cursor: pointer;
           }
-
+  
           &:first-child {
             margin-left: 0px;
           }
-
+  
           &.active {
             color: #4b9ce2;
             border-bottom: 2px solid #4b9ce2;
@@ -223,82 +219,168 @@
         display: none;
       }
     }
-
+  
     .product {
       width: 100%;
       display: flex;
+      padding-bottom: 8.33vw;
       justify-content: center;
-
-      .productContent {
+      background-color: #f2f2f2;
+  
+      @include tabletSmall() {
+        padding-bottom: 3.66vw;
+      }
+  
+      .productContainer {
         display: flex;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
-        width: 77.1%;
-        gap: 20px;
-
-        @include mobile() {
+        width: 77.2%;
+        gap: 1.04vw;
+  
+        @include tabletSmall() {
           width: 94.66%;
-          gap: 10px;
         }
 
+        @include mobile() {
+          gap: 2vw;
+        }
+  
         .productItem {
-          width: 280px;
-          height: 392px;
+          width: 18.92%;
+          height: 36.3vh;
           background-color: #fff;
           border-radius: 8px;
           padding: 10px;
           display: flex;
           flex-direction: column;
-          
-          .productImg {
-            width: 280px;
-            height: 397px;
-            border-radius: 8px;
+          justify-content: space-between;
+
+          @include desktop() {
+            width: 23.95%;
+            height: 52.5vh;
           }
 
-          .productDetail {
-            width: 100%;
+          @include desktopMedium() {
+            height: 51vh;
+          }
+
+          @include desktopSmall() {
+            width: 32.43%;
+            height: 62.3vh;
+          }
+
+          @include tablet() {
+            height: 48vh;
+          }
+
+          @include tabletSmall() {
+            height: 32vh;
+          }
+
+          @include mobile() {
+            width: 48%;
+            height: 35vh;
+            padding: 6px;
+          }
+
+          @include mobileSmall() {
+            width: 48.75%;
+            height: 40vh;
+            padding: 6px;
+          }
+
+          .productImg {
             display: flex;
-            justify-content: space-between;
-            margin-top: 5px;
-            
-            .productBrand {
-              font-size: 15px;
-              font-weight: bold;
-              line-height: 22px;
-              color: #4B9CE2;
+            justify-content: center;
+            align-items: center;
+            min-width: 100%;
+            min-height: 79.84%;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+
+            @include mobileSmall() {
+              min-height: 72.3%;
             }
 
-            .productColor {
-              font-size: 13px;
+            .productPhoto {
+              width: 100%;
+              height: 100%;
+              border-radius: 8px;
+            }
+
+            .noPhoto {
+              width: 128px;
+              height: 128px;
+
+              @include tabletSmall() {
+                width: 56px;
+                height: 56px;
+              }
+            }
+          }
+  
+          .productContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding-top: 5px;
+
+            .productDetail {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+
+              @include mobile() {
+                flex-direction: column;
+                justify-content: flex-start;
+              }
+              
+              .productBrand {
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 15px;
+                color: #4B9CE2;
+              }
+    
+              .productColor {
+                font-size: 13px;
+                line-height: 15px;
+                color: #3E3E3E;
+              }
+            }
+    
+            .productPrice {
+              width: 100%;
+              font-size: 18px;
+              font-weight: bold;
               line-height: 22px;
               color: #3E3E3E;
             }
           }
-
-          .productPrice {
-            width: 100%;
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 22px;
-            color: #3E3E3E;
-            display: flex;
-            align-self: flex-end;
-          }
-
-        }
-
-        .productNotFound {
-          width: 100%;
-          padding: 20px;
-          font-size: 18px;
-          font-weight: bold;
-          line-height: 22px;
-          color: #3E3E3E;
-          text-align: center;
+  
         }
       }
+  
+      .productNotFound {
+        width: 100%;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 22px;
+        color: #3E3E3E;
+        text-align: center;
+      }
+    }
+
+    .loadingProduct {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

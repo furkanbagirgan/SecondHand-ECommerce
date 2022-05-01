@@ -1,46 +1,17 @@
 /* Mixin for media queries */
-
-@mixin screenSize($size) {
-  @if ($size == "xxlarge") {
-    @media screen and (max-width: 1480px) {
-      @content;
-    }
-  }
-
-  @if ($size == "xlarge") {
-    @media screen and (max-width: 1200px) {
-      @content;
-    }
-  }
-  @if ($size == "large") {
-    @media screen and (max-width: 992px) {
-      @content;
-    }
-  }
-  @if $size== "medium" {
-    @media screen and (max-width: 768px) {
-      @content;
-    }
-  }
-  @if $size== "small" {
-    @media screen and (max-width: 612px) {
-      @content;
-    }
-  }
-  @if $size== "xsmall" {
-    @media screen and (max-width: 400px) {
-      @content;
-    }
-  }
-}
-
-@mixin desktopLarge() {
+@mixin desktop() {
   @media (max-width: 1550px) {
     @content;
   }
 }
 
-@mixin desktop() {
+@mixin desktopMedium() {
+  @media (max-width: 1367px) {
+    @content;
+  }
+}
+
+@mixin desktopSmall() {
   @media (max-width: 1200px) {
     @content;
   }
@@ -52,8 +23,14 @@
   }
 }
 
-@mixin mobile() {
+@mixin tabletSmall() {
   @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: 612px) {
     @content;
   }
 }
