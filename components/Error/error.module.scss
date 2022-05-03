@@ -1,0 +1,36 @@
+@import "../../styles/_mixin";
+
+.error {
+    display:flex;
+    flex-direction :column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin-top: 20px;
+    margin-inline: auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #4b9ce2;
+    border-radius: 8px;
+    text-align: start;
+
+    @include tabletSmall() {
+      width: 80%;
+      margin-top: 10px;
+    }
+  
+    .errorContent {
+      width: 128px;
+      height: 128px;
+
+      .errorImg {
+        width: 100%;
+      }
+    }
+  
+    .errorMessage {
+      font-size: 40px;
+      color: #525252;
+      text-align: center;
+    }
+  }

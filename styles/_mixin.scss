@@ -1,6 +1,6 @@
 /* Mixin for media queries */
 @mixin desktop() {
-  @media (max-width: 1550px) {
+  @media (max-width: 1537px) {
     @content;
   }
 }

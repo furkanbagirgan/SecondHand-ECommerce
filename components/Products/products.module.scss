@@ -1,9 +1,165 @@
 @import "../../styles/_mixin";
 
-.main {
+.product {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  padding-bottom: 8.33vw;
   justify-content: center;
+  background-color: #f2f2f2;
 
-  
+  @include tabletSmall() {
+    padding-bottom: 3.66vw;
+  }
+
+  .productContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 77.2%;
+    height: fit-content;
+    gap: 1.04vw;
+
+    @include tabletSmall() {
+      width: 94.66%;
+    }
+
+    @include mobile() {
+      gap: 2vw;
+    }
+
+    .productItem {
+      width: 18.92%;
+      height: 36.3vh;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include desktop() {
+        width: 18.9%;
+        height: 41.5vh;
+      }
+
+      @include desktopMedium() {
+        height: 51vh;
+      }
+
+      @include desktopSmall() {
+        width: 32.43%;
+        height: 62.3vh;
+      }
+
+      @include tablet() {
+        height: 48vh;
+      }
+
+      @include tabletSmall() {
+        height: 32vh;
+      }
+
+      @include mobile() {
+        width: 48%;
+        height: 35vh;
+        padding: 6px;
+      }
+
+      @include mobileSmall() {
+        width: 48.75%;
+        height: 40vh;
+        padding: 6px;
+      }
+
+      .productImg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 100%;
+        min-height: 79.84%;
+        background-color: #f2f2f2;
+        border-radius: 8px;
+
+        @include mobileSmall() {
+          min-height: 72.3%;
+        }
+
+        .productPhoto {
+          object-fit: cover;
+          object-position: top;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+
+        .noPhoto {
+          width: 128px;
+          height: 128px;
+
+          @include tabletSmall() {
+            width: 56px;
+            height: 56px;
+          }
+        }
+      }
+
+      .productContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding-top: 5px;
+
+        .productDetail {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          @include mobile() {
+            flex-direction: column;
+            justify-content: flex-start;
+          }
+          
+          .productBrand {
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 15px;
+            color: #4B9CE2;
+          }
+
+          .productColor {
+            font-size: 13px;
+            line-height: 15px;
+            color: #3E3E3E;
+          }
+        }
+
+        .productPrice {
+          width: 100%;
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 22px;
+          color: #3E3E3E;
+        }
+      }
+
+    }
+  }
+
+  .productNotFound {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+    color: #3E3E3E;
+    text-align: center;
+  }
 }

@@ -6,12 +6,35 @@ const ProductContext = React.createContext();
 const ProductProvider = ({ children }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("Hepsi");
+  const [activeCategory, setActiveCategory] = useState({id:0,name:"Hepsi"});
+
+  const getProducts = async (categoryId,start) => {
+    return await setProductService(categoryId,start).then(res=>{
+      if(Array.isArray(res)){
+        if(res.length===0){
+          return 0;
+        }
+        else{
+          if(start===0){
+            setFilteredProducts([...res]);
+            return 1;
+          }
+          else{
+            setFilteredProducts(prev=> {return [...prev, ...res]});
+            return 1;
+          }
+        }
+      }
+      else{
+        return res;
+      }
+    });
+  }
 
   const getAllCategories = async (categoryName) => {
     const res = await setCategoryService();
     if(isNaN(res)){
-      if(categoryName){
+      res.unshift({id:0,name:"Hepsi"});
         setCategories(res);
         setActiveCategory(categoryName);
         const categoryId=0;
@@ -22,46 +45,21 @@ const ProductProvider = ({ children }) => {
         });
         await changeCategory(categoryName,categoryId);
         return 1;
-      }
-      else{
-        setCategories(res);
-        setActiveCategory("Hepsi");
-        await changeCategory("Hepsi",0);
-        return 1;
-      }
     }
     else{
       return res;
     }
-  };
+  }
 
   const changeCategory = async(categoryName,categoryId) => {
-    setActiveCategory(categoryName);
-    if(categoryName !=="Hepsi"){
-      const filtered=await setProductService(categoryId);
-      if(Array.isArray(filtered)){
-        setFilteredProducts(filtered);
-        return 1;
-      }
-      else{
-        return filtered;
-      }
-    }
-    else{
-      const allProducts=await setProductService();
-      if(Array.isArray(allProducts)){
-        setFilteredProducts(allProducts);
-        return 1;
-      }
-      else{
-        return allProducts;
-      }
-    }
+    setActiveCategory(prev=>{return {...prev,name:categoryName,id:categoryId}});
+    return await getProducts(categoryId,0);
   }
 
   return (
     <ProductContext.Provider
       value={{
+        getProducts,
         filteredProducts,
         categories,
         activeCategory,

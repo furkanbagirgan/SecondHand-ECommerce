@@ -50,10 +50,10 @@ export const setCategoryService = async () => {
     });
 };
 
-export const setProductService = async (categoryId) => {
-  if(categoryId){
+export const setProductService = async (categoryId,start) => {
+  if(categoryId && categoryId !== 0){
     return await axios
-    .get(axiosURL.product+"?category="+String(categoryId))
+    .get(axiosURL.product+"?_limit=15&_start="+start+"&category="+String(categoryId))
     .then((res) => {
       return res.data;
     })
@@ -63,7 +63,7 @@ export const setProductService = async (categoryId) => {
   }
   else{
     return await axios
-    .get(axiosURL.product)
+    .get(axiosURL.product+"?_limit=15&_start="+start)
     .then((res) => {
       return res.data;
     })

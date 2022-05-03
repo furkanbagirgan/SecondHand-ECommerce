@@ -1,17 +1,91 @@
 @import "../../styles/_mixin";
 
-.main {
+.navbar {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
 
-  .logoImg {
-    width: 224px;
-    height: 73px;
+  @include tabletSmall() {
+    height: 60px;
+  }
+
+  .navbarContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 77.1%;
+    height: 100%;
 
     @include tabletSmall() {
-      width: 148px;
-      height: 48px;
+      width: 94.66%;
+    }
+
+    .logo {
+      width: fit-content;
+      height: fit-content;
+
+      .logoImg {
+        width: 128px;
+        height: 42px;
+
+        @include tabletSmall() {
+          width: 99px;
+          height: 32px;
+        }
+      }
+    }
+
+    .navbarButtons {
+      display: flex;
+
+      button {
+        padding-block: 10px;
+        padding-inline: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 20px;
+        color: #4b9ce2;
+        background-color: #f0f8ff;
+        border: 0px;
+        border-radius: 8px;
+        margin-left: 10.5px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @include tabletSmall() {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+
+        .icon {
+          margin-right: 5px;
+        }
+      }
+
+      .addButton {
+        display: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        @include tabletSmall() {
+          display: block;
+        }
+
+        .icon {
+          margin-right: 0px;
+        }
+      }
     }
   }
 }
