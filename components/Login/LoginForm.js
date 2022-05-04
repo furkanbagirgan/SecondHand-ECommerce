@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 import { LoginSchema } from "../../constants/YupSchema";
 import styles from "./login.module.scss";
-import LoadingIcon from "./../../constants/icons/LoadingIcon";
+import Loading from "../Loading/Loading";
 import { useAuth } from "../../contexts/user";
 import toastMessage from "./../../constants/toastify";
 
@@ -99,7 +99,7 @@ function LoginForm() {
             onClick={() => formSubmit()}
             disabled={loading}
           >
-            {loading ? <LoadingIcon size={30} color="white" /> : "Giriş"}
+            {loading ? <Loading size={30} color="white" /> : "Giriş"}
           </button>
         </div>
       </div>

@@ -1,9 +1,9 @@
-import Layout from "../components/Layout";
 import { useState } from "react";
 import Image from "next/image";
 
+import Layout from "../components/Layout";
 import { ProductProvider } from "../contexts/product";
-import LoadingIcon from "../constants/icons/LoadingIcon";
+import Loading from "../components/Loading/Loading";
 import Categories from "../components/Categories/Categories";
 import Error from "../components/Error/Error";
 import indexBanner from "../public/indexBanner.png";
@@ -31,9 +31,7 @@ function HomePage() {
             </div>
             <Categories loading={setLoading} showError={setShowError} />
             {loading ? (
-              <div className="loading">
-                <LoadingIcon size={75} color="#4b9ce2" />
-              </div>
+              <Loading size={75} color="#4b9ce2"/>
             ) : (
               <Products/>
             )}

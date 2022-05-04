@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import styles from "./products.module.scss";
 import { useProduct } from "../../contexts/product";
 import { useScroll } from './../../hooks/useScroll';
+import Loading from "../Loading/Loading";
 
 let skip=-1;
 function Products() {
+  const [loading,setLoading]= useState(false);
   const { filteredProducts, getProducts, activeCategory } = useProduct();
   const router = useRouter();
   const scroll = useScroll();
@@ -17,14 +19,17 @@ function Products() {
 
   const getProductsNow=async()=>{
     if(scroll.scrolling){
+      setLoading(true);
       await getProducts(activeCategory.id,((skip*15)+15));
       skip=skip+1;
+      setLoading(false);
     }
   }
 
   return (
     <div id="productCon" className={styles.product}>
       {filteredProducts?.length > 0 ? (
+        <>
         <ul className={styles.productContainer}>
           {
             /* Here the characters are printed on the screen. */
@@ -72,6 +77,11 @@ function Products() {
             ))
           }
         </ul>
+        {
+          loading &&
+          <Loading size={75} color="#4b9ce2" />
+        }
+        </>
       ) : (
         <div className={styles.productNotFound}>
           Bu kategoride hiçbir ürün bulunmamaktadır.

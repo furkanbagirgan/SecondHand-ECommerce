@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 import { RegisterSchema } from "../../constants/YupSchema";
 import styles from "./register.module.scss";
-import LoadingIcon from "./../../constants/icons/LoadingIcon";
+import Loading from "../Loading/Loading";
 import { useAuth } from "../../contexts/user";
 import toastMessage from "./../../constants/toastify";
 
@@ -100,7 +100,7 @@ function RegisterForm() {
             onClick={() => formSubmit()}
             disabled={loading}
           >
-            {loading ? <LoadingIcon size={30} color="white" /> : "Üye Ol"}
+            {loading ? <Loading size={30} color="white" /> : "Üye Ol"}
           </button>
         </div>
       </div>

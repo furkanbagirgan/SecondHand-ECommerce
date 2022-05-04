@@ -19,6 +19,7 @@ function Categories({ loading, showError }) {
   }, []);
 
   const getCategories = async () => {
+    loading(true);
     if (router.asPath !== "/") {
       const ctName = router.asPath.split("=");
       const res = await getAllCategories(decodeURI(ctName[1]));
@@ -35,6 +36,7 @@ function Categories({ loading, showError }) {
         showError(false);
       }
     }
+    loading(false);
   };
 
   const categoryClick = async (categoryName, categoryId) => {

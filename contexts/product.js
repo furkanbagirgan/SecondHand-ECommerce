@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { setCategoryService,setProductService } from "../services/authService";
+import { setProductsService,setCategoryService,setProductService } from "../services/authService";
 
 const ProductContext = React.createContext();
 
@@ -9,7 +9,7 @@ const ProductProvider = ({ children }) => {
   const [activeCategory, setActiveCategory] = useState({id:0,name:"Hepsi"});
 
   const getProducts = async (categoryId,start) => {
-    return await setProductService(categoryId,start).then(res=>{
+    return await setProductsService(categoryId,start).then(res=>{
       if(Array.isArray(res)){
         if(res.length===0){
           return 0;
@@ -27,6 +27,17 @@ const ProductProvider = ({ children }) => {
       }
       else{
         return res;
+      }
+    });
+  }
+
+  const getProduct = async (productId) => {
+    return await setProductService(productId).then(res=>{
+      if(res != null && res.constructor.name === "Object"){
+        return {detail:{...res},status:1};
+      }
+      else{
+        return {detail:{},status:0};
       }
     });
   }
@@ -60,6 +71,7 @@ const ProductProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         getProducts,
+        getProduct,
         filteredProducts,
         categories,
         activeCategory,

@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
+
+import Error from "../../components/Error/Error";
+import Layout from "../../components/Layout";
+import { ProductProvider } from "../../contexts/product";
+import Detail from "../../components/Detail/Detail";
 
 function ProductDetail() {
-    const [productId,setProductId]=useState();
-  const router = useRouter();
-
-  useEffect(() => {
-    const {id}=router.query;
-    setProductId(id);
-  }, []);
+  const [showError, setShowError] = useState(false);
 
   //Here, the components of the first opened page are printed on the screen.
   return (
@@ -18,7 +16,15 @@ function ProductDetail() {
         <title>İkinci El Project | Ürün Detayı</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div>Mehaba {productId}</div>
+      <ProductProvider>
+        <Layout>
+          {showError ? (
+            <Error />
+          ) : (
+            <Detail showError={setShowError}/>
+          )}
+        </Layout>
+      </ProductProvider>
     </>
   );
 }

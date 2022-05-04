@@ -1,0 +1,142 @@
+@import "../../styles/_mixin";
+
+.detail {
+  width: 100%;
+  height: 71.25%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+
+  @include tabletSmall() {
+    margin-top: 10px;
+    height: 82.5%;
+  }
+
+  .detailContent {
+    width: 77.1%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    padding-block: 16px;
+    padding-inline: 15px;
+
+    @include tabletSmall() {
+      width: 94.66%;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .productImg {
+      display: flex;
+      flex-basis: 47.29%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+
+      @include tabletSmall() {
+        flex-basis: 100%;
+        height: 53.55%;
+      }
+
+      .productPhoto {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+      }
+
+      .noPhoto {
+        width: 128px;
+        height: 128px;
+
+        @include tabletSmall() {
+          width: 56px;
+          height: 56px;
+        }
+      }
+    }
+
+    .productDetail {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 47.29%;
+      padding-left: 10px;
+      padding-top: 14px;
+
+      @include tabletSmall() {
+        flex-basis: 100%;
+        height: 46.45%;
+        padding-left: 0px;
+        padding-top: 10px;
+      }
+
+      .productName {
+        width: 100%;
+        font-size: 34px;
+        line-height: 33px;
+        color: #555555;
+        white-space: normal;
+        word-break: keep-all;
+
+        @include tabletSmall() {
+            font-size: 18px;
+          }
+      }
+
+      .productFeature {
+        font-size: 15px;
+        line-height: 20px;
+        color: #525252;
+
+        @include tabletSmall() {
+            font-size: 18px;
+          }
+
+          &.title  {
+              font-weight: bold;
+          }
+        
+          
+    }
+
+        .productPrice {
+
+            font-size: 23px;
+            font-weight: bold;
+        line-height: 23px;
+        color: #525252;
+
+        @include tabletSmall() {
+            font-size: 20px;
+          }
+            
+        }
+        .productSelling {
+            font-size: 18px;
+        line-height: 24px;
+        font-weight: bold;
+            
+        }
+        .productDescription {
+            font-size: 15px;
+        line-height: 23px;
+        color: #555;
+
+          &.title  {
+              font-size: 18px;
+              line-height: 24px;
+              font-weight: bold;
+              color: #525252;
+          }
+            
+        }
+    }
+  }
+}

@@ -32,14 +32,14 @@ function Navbar() {
                 router.push("/addProduct");
               }}
             >
-              <AddIcon style="icon" size="12.9" color="#4b9ce2" />
+              <AddIcon style={styles.icon} size="12.9" color="#4b9ce2" />
             </button>
             <button
               onClick={() => {
                 router.push("/addProduct");
               }}
             >
-              <AddIcon style="icon" size="12.9" color="#4b9ce2" />
+              <AddIcon style={styles.icon} size="12.9" color="#4b9ce2" />
               Ürün Ekle
             </button>
             <button
@@ -48,7 +48,7 @@ function Navbar() {
               }}
             >
               <UserIcon
-                style="icon"
+                style={styles.icon}
                 width="12.4"
                 height="13.1"
                 color="#4b9ce2"
@@ -64,7 +64,7 @@ function Navbar() {
               }}
             >
               <UserIcon
-                style="icon"
+                style={styles.icon}
                 width="12.4"
                 height="13.1"
                 color="#4b9ce2"
