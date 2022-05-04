@@ -10,7 +10,8 @@
 
   @include tabletSmall() {
     margin-top: 10px;
-    height: 82.5%;
+    height: 750px;
+    padding-bottom: 74px;
   }
 
   .detailContent {
@@ -84,59 +85,117 @@
         color: #555555;
         white-space: normal;
         word-break: keep-all;
+        margin-bottom: 25px;
 
         @include tabletSmall() {
-            font-size: 18px;
-          }
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
       }
 
       .productFeature {
         font-size: 15px;
         line-height: 20px;
         color: #525252;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: start;
+        gap: 20px;
+        list-style: none;
 
         @include tabletSmall() {
-            font-size: 18px;
-          }
+          font-size: 18px;
+          gap: 10px;
+        }
 
-          &.title  {
-              font-weight: bold;
-          }
-        
-          
-    }
+        &.title {
+          font-weight: bold;
+        }
+      }
 
-        .productPrice {
-
-            font-size: 23px;
-            font-weight: bold;
+      .productPrice {
+        font-size: 23px;
+        font-weight: bold;
         line-height: 23px;
         color: #525252;
+        margin-top: 30px;
 
         @include tabletSmall() {
-            font-size: 20px;
-          }
-            
+          font-size: 20px;
+          margin-top: 0px;
         }
-        .productSelling {
-            font-size: 18px;
+      }
+
+      .productSelling {
+        font-size: 18px;
         line-height: 24px;
         font-weight: bold;
-            
+        margin-top: 30px;
+
+        @include tabletSmall(){
+            margin-top: 0px;
         }
-        .productDescription {
-            font-size: 15px;
+
+        .buyButton {
+            width: 235px;
+            height: 45px;
+            border: 0px;
+            border-radius: 8px;
+            font-size: 18px;
+            line-height: 24px;
+            color: #fff;
+            background-color: #4b9ce2;
+
+            @include tabletSmall() {
+                width: 172px;
+              }
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.8;
+            }
+          }
+
+          .offerButton {
+            width: 235px;
+            height: 45px;
+            border: 0px;
+            border-radius: 8px;
+            font-size: 18px;
+            line-height: 24px;
+            color: #4b9ce2;
+            background-color: #F0F8FF;
+            margin-left: 10px;
+
+            @include tabletSmall() {
+                width: 172px;
+              }
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.8;
+            }
+          }
+      }
+
+      .productDescription {
+        font-size: 15px;
         line-height: 23px;
         color: #555;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        width: 480px;
 
-          &.title  {
-              font-size: 18px;
-              line-height: 24px;
-              font-weight: bold;
-              color: #525252;
+        @include tabletSmall() {
+            width: 100%;
           }
-            
-        }
+
+        .desTitle{
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+      }
     }
   }
 }

@@ -41,8 +41,8 @@ function Categories({ loading, showError }) {
 
   const categoryClick = async (categoryName, categoryId) => {
     loading(true);
-    const res = await changeCategory(categoryName, categoryId);
-    if (res !== 1) {
+    const res = await changeCategory(categoryName, categoryId,true);
+    if (res !== 1 && res !== 2 && res !== 3) {
       showError(true);
     } else {
       showError(false);

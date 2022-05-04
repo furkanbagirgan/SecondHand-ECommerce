@@ -6,9 +6,9 @@ import { useProduct } from "../../contexts/product";
 import { useScroll } from './../../hooks/useScroll';
 import Loading from "../Loading/Loading";
 
-let skip=-1;
 function Products() {
   const [loading,setLoading]= useState(false);
+  const [stopLoading,setStopLoading]= useState(false);
   const { filteredProducts, getProducts, activeCategory } = useProduct();
   const router = useRouter();
   const scroll = useScroll();
@@ -18,11 +18,13 @@ function Products() {
 	}, [scroll.scrolling]);
 
   const getProductsNow=async()=>{
-    if(scroll.scrolling){
-      setLoading(true);
-      await getProducts(activeCategory.id,((skip*15)+15));
-      skip=skip+1;
-      setLoading(false);
+    if(scroll.scrolling && !stopLoading){
+        setLoading(true);
+        const res=await getProducts(activeCategory.id);
+        if(res!==1 && res!==2){
+          setStopLoading(true);
+        }
+        setLoading(false);
     }
   }
 

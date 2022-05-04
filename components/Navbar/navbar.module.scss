@@ -58,6 +58,7 @@
 
         &:hover {
           cursor: pointer;
+          opacity: 0.8;
         }
 
         @include tabletSmall() {
@@ -76,6 +77,7 @@
 
         &:hover {
           cursor: pointer;
+          opacity: 0.8;
         }
 
         @include tabletSmall() {

@@ -34,6 +34,14 @@ function Detail({ showError }) {
     setLoading(false);
   };
 
+  const buy = async () => {
+    
+  };
+
+  const offer = async () => {
+    
+  };
+
   return (
     <div className={styles.detail}>
       <div className={styles.detailContent}>
@@ -60,10 +68,29 @@ function Detail({ showError }) {
           </div>
           <div className={styles.productDetail}>
             <div className={styles.productName}>{product.name? product.name : "Adlandırılmamış"}</div>
-            <div className={styles.productFeature}>{product.brand? product.brand+","+product.color+","+product.status : "Adlandırılmamış"}</div>
-            <div className={styles.productPrice}>{product.price? product.price+",00 TL" : "Adlandırılmamış"}</div>
-            <div className={styles.productSelling}>Satın Al Teklif Ver</div>
-            <div className={styles.productDescription}>{product.description? product.description : "Adlandırılmamış"}</div>
+            <ul className={styles.productFeature}>
+              <li className={`${styles.productFeature} ${styles.title}`}>Marka:</li>
+              <li>{product.brand? product.brand : "Belirtilmemiş"}</li>
+              <li className={`${styles.productFeature} ${styles.title}`}>Renk:</li>
+              <li>{product.color? product.color : "Belirtilmemiş"}</li>
+              <li className={`${styles.productFeature} ${styles.title}`}>Kullanım Durumu:</li>
+              <li>{product.status? product.status : "Belirtilmemiş"}</li>
+            </ul>
+            <div className={styles.productPrice}>{product.price? product.price+",00 TL" : "Belirtilmemiş"}</div>
+            <div className={styles.productSelling}>
+              <button
+                className={styles.buyButton}
+                onClick={() => buy()}
+              >Satın Al</button>
+              <button
+                className={styles.offerButton}
+                onClick={() => offer()}
+              >Teklif Ver</button>
+            </div>
+            <div className={styles.productDescription}>
+              <span className={styles.desTitle}>Açıklama</span>
+              <span>{product.description? product.description : "Açıklanmamış"}</span>
+            </div>
           </div>
         </>)}
       </div>

@@ -2,33 +2,47 @@ import React, { useContext, useState } from "react";
 import { setProductsService,setCategoryService,setProductService } from "../services/authService";
 
 const ProductContext = React.createContext();
+let skip=-3;
 
 const ProductProvider = ({ children }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState({id:0,name:"Hepsi"});
 
-  const getProducts = async (categoryId,start) => {
-    return await setProductsService(categoryId,start).then(res=>{
-      if(Array.isArray(res)){
-        if(res.length===0){
-          return 0;
+  const getProducts = async (categoryId) => {
+    if(skip >= -1){
+      return await setProductsService(categoryId,((skip*15)+15)).then(res=>{
+        if(Array.isArray(res)){
+            if(skip=== -1){
+              skip=skip+1;
+              setFilteredProducts([...res]);
+              if(res.length<15){
+                return 3;
+              }
+              else{
+                return 1;
+              }
+            }
+            else{
+              skip=skip+1;
+              setFilteredProducts(prev=> {return [...prev, ...res]});
+              if(res.length<15){
+                return 3;
+              }
+              else{
+                return 1;
+              }
+            }
         }
         else{
-          if(start===0){
-            setFilteredProducts([...res]);
-            return 1;
-          }
-          else{
-            setFilteredProducts(prev=> {return [...prev, ...res]});
-            return 1;
-          }
+          return res;
         }
-      }
-      else{
-        return res;
-      }
-    });
+      });
+    }
+    else{
+      skip=skip+1;
+      return 2;
+    }
   }
 
   const getProduct = async (productId) => {
@@ -54,7 +68,7 @@ const ProductProvider = ({ children }) => {
             categoryId=element.id;
           }
         });
-        await changeCategory(categoryName,categoryId);
+        await changeCategory(categoryName,categoryId,false);
         return 1;
     }
     else{
@@ -62,9 +76,12 @@ const ProductProvider = ({ children }) => {
     }
   }
 
-  const changeCategory = async(categoryName,categoryId) => {
+  const changeCategory = async(categoryName,categoryId,getAll) => {
     setActiveCategory(prev=>{return {...prev,name:categoryName,id:categoryId}});
-    return await getProducts(categoryId,0);
+    if(getAll){
+      skip=-1;
+    }
+    return await getProducts(categoryId);
   }
 
   return (
