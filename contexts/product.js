@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { setProductsService,setCategoryService,setProductService } from "../services/authService";
+import { setProductsService,setCategoryService,setProductService } from "../services/productService";
 
 const ProductContext = React.createContext();
 let skip=-3;

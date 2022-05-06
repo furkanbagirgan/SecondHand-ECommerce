@@ -9,8 +9,8 @@
   background-color: #f2f2f2;
 
   @include tablet() {
-    height: 500px;
-    padding-bottom: 20px;
+    height: 550px;
+    padding-bottom: 10px;
   }
 
   @include tabletSmall() {
@@ -132,22 +132,67 @@
           }
         }
 
-        .productPrice {
-          width: fit-content;
-          font-size: 23px;
-          font-weight: bold;
-          line-height: 23px;
-          color: #525252;
+        .prices {
+          display: flex;
+          flex-direction: column;
           margin-top: 30px;
 
-          @include desktopMedium() {
-            font-size: 20px;
-            margin-top: 15px;
-          }
-
           @include tabletSmall() {
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
             margin-top: 0px;
             margin-bottom: 10px;
+          }
+
+          .productPrice {
+            width: fit-content;
+            font-size: 23px;
+            font-weight: bold;
+            line-height: 23px;
+            color: #525252;
+
+            @include desktopMedium() {
+              font-size: 20px;
+              margin-top: 15px;
+            }
+
+            @include tabletSmall() {
+              margin-top: 0px;
+              margin-bottom: 10px;
+            }
+          }
+
+          .offerPrice {
+            width: 230px;
+            height: 36px;
+            border-radius: 8px;
+            background-color: #F2F2F2;
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: bold;
+            color: #525252;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+
+            @include tabletSmall() {
+              width: 171px;
+              height: 30px;
+              margin-top: 0px;
+            }
+
+            span {
+              font-weight: normal;
+              color: #B1B1B1;
+
+              @include tabletSmall() {
+                font-size: 12px;
+                line-height: 16px;
+              }
+            }
           }
         }
       }

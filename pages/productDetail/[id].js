@@ -4,7 +4,7 @@ import Head from "next/head";
 import Error from "../../components/Error/Error";
 import Layout from "../../components/Layout";
 import { ProductProvider } from "../../contexts/product";
-import { UserProvider } from "../../contexts/user";
+import { OfferProvider } from "../../contexts/offer";
 import Detail from "../../components/Detail/Detail";
 
 function ProductDetail() {
@@ -22,9 +22,9 @@ function ProductDetail() {
           {showError ? (
             <Error />
           ) : (
-            <UserProvider>
+            <OfferProvider>
               <Detail showError={setShowError}/>
-            </UserProvider>
+            </OfferProvider>
           )}
         </Layout>
       </ProductProvider>

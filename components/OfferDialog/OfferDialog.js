@@ -4,22 +4,25 @@ import ReactDOM from "react-dom";
 import styles from "./offerDialog.module.scss";
 import Loading from "../Loading/Loading";
 import CloseIcon from "./../../constants/icons/CloseIcon";
+import { useOffer } from "../../contexts/offer";
+import toastMessage from "../../constants/toastify";
 
-function OfferDialog({ callback, product, showDialog, closeDialog }) {
+function OfferDialog({ product, showDialog, closeDialog }) {
   const [loading, setLoading] = useState(false);
   const [isBrowser, setIsBrowser] = useState(false);
   const [selectedOffer, setSelectedOffer] = useState(0);
   const [customPrice, setCustomPrice] = useState("");
   const [isValid, setIsValid] = useState(true);
   const [offerPrice, setOfferPrice] = useState(0);
+  const { giveOffer } = useOffer();
 
   useEffect(() => {
     setIsBrowser(true);
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     setIsValid(!Number.isNaN(customPrice - parseFloat(customPrice)));
-  },[customPrice]);
+  }, [customPrice]);
 
   useEffect(() => {
     switch (selectedOffer) {
@@ -36,7 +39,7 @@ function OfferDialog({ callback, product, showDialog, closeDialog }) {
         setCustomPrice("");
         break;
       default:
-        setOfferBody(parseFloat(customPrice));
+        setOfferPrice(parseFloat(customPrice));
         break;
     }
 
@@ -45,13 +48,19 @@ function OfferDialog({ callback, product, showDialog, closeDialog }) {
 
   const offer = async () => {
     setLoading(true);
-    if (selectedOption === 3 && isValid && customPrice !== "") {
-      await callback(offerPrice);
+    let res = 0;
+    if (selectedOffer === 3 && isValid && customPrice !== "") {
+      res = await giveOffer(product.id, offerPrice);
     }
-    if (selectedOption !== 3) {
-      await callback(offerBody);
+    if (selectedOffer !== 3) {
+      res = await giveOffer(product.id, offerPrice);
     }
     setLoading(false);
+    if (res === 200) {
+      toastMessage("success", "Teklif Başarıyla Yapıldı");
+    } else {
+      toastMessage("error", "Bir hata ile karşılaşıldı!");
+    }
     closeDialog();
   };
 
@@ -67,7 +76,7 @@ function OfferDialog({ callback, product, showDialog, closeDialog }) {
         <div className={styles.offerContent}>
           <div className={styles.header}>
             <span>Teklif Ver</span>
-            <div onClick={()=>closeDialog()}>
+            <div onClick={() => closeDialog(5)}>
               <CloseIcon style={styles.closeIcon} color="#525252" />
             </div>
           </div>
@@ -104,23 +113,31 @@ function OfferDialog({ callback, product, showDialog, closeDialog }) {
             <div
               role="none"
               onClick={() => setSelectedOffer(0)}
-              className={`${styles.offer} ${selectedOffer === 0 ? styles.selected : ""}`}
+              className={`${styles.offer} ${
+                selectedOffer === 0 ? styles.selected : ""
+              }`}
             >
-              <span className={styles.checkbox}/>
+              <span className={styles.checkbox} />
               <span>%20&apos;si Kadar Teklif Ver</span>
             </div>
             <div
               role="none"
               onClick={() => setSelectedOffer(1)}
-              className={`${styles.offer} ${selectedOffer === 1 ? styles.selected : ""}`}
+              className={`${styles.offer} ${
+                selectedOffer === 1 ? styles.selected : ""
+              }`}
             >
               <span className={styles.checkbox} />
-              <span className={styles.offerTitle}>%30&apos;u Kadar Teklif Ver</span>
+              <span className={styles.offerTitle}>
+                %30&apos;u Kadar Teklif Ver
+              </span>
             </div>
             <div
               role="none"
               onClick={() => setSelectedOffer(2)}
-              className={`${styles.offer} ${selectedOffer === 2 ? styles.selected : ""}`}
+              className={`${styles.offer} ${
+                selectedOffer === 2 ? styles.selected : ""
+              }`}
             >
               <span className={styles.checkbox} />
               <span>%40&apos;ı Kadar Teklif Ver</span>
@@ -128,7 +145,7 @@ function OfferDialog({ callback, product, showDialog, closeDialog }) {
             <div
               role="none"
               onClick={() => setSelectedOffer(3)}
-              className={`${styles.offer} ${styles.customOffer} ${
+              className={`${styles.customOffer} ${
                 selectedOffer === 3 && isValid ? styles.selected : ""
               } ${
                 selectedOffer === 3 && customPrice && !isValid
@@ -136,20 +153,18 @@ function OfferDialog({ callback, product, showDialog, closeDialog }) {
                   : ""
               }`}
             >
-              <div className={styles.customOffer}>
-                <input
-                  type="text"
-                  name="offeredPrice"
-                  placeholder="Teklif Belirle"
-                  value={customPrice}
-                  onChange={(e) => setCustomPrice(e.target.value)}
-                  autoComplete="off"
-                />
-                <p>TL</p>
-              </div>
+              <input
+                type="text"
+                name="offeredPrice"
+                placeholder="Teklif Belirle"
+                value={customPrice}
+                onChange={(e) => setCustomPrice(e.target.value)}
+                autoComplete="off"
+              />
+              <p>TL</p>
             </div>
             {selectedOffer === 3 && customPrice && !isValid && (
-              <span className={styles.validaError}>
+              <span className={styles.validError}>
                 Geçerli bir tutar giriniz! (Örnek: 1234.56)
               </span>
             )}

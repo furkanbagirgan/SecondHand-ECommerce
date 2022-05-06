@@ -1,0 +1,96 @@
+@import "../../styles/_mixin";
+
+.buyDialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(75, 156, 226, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .buyContent {
+    width: 355px;
+    min-height: 171px;
+    background-color: #fff;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 12px #1e36482e;
+    padding-block: 20px;
+    padding-inline: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .header {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+        align-items: center;
+        color: #525252;
+        font-size: 25px;
+        line-height: 23px;
+        font-weight: bold;
+
+        @include tabletSmall() {
+          font-size: 18px;
+        }
+    }
+
+    .description {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        line-height: 23px;
+        color: #555555;
+        margin-top: 12px;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        height: fit-content;
+
+        button {
+            width: 315px;
+            height: 45px;
+            border: 0px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+
+        .confirmButton {
+            color: #fff;
+            background-color: #4b9ce2;
+        }
+
+        .cancelButton {
+            color: #4b9ce2;
+            background-color: #F0F8FF;
+        }
+    }
+  }
+
+  &.closeDialog {
+    display: none;
+  }
+}

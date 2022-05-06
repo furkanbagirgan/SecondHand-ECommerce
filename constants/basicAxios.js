@@ -8,4 +8,7 @@ export const axiosURL = {
   register: "/auth/local/register",
   category: "/categories",
   product: "/products",
+  giveOffer: "/offers",
+  deleteOffer: "/offers/",
+  buyProduct: "/products/"
 };

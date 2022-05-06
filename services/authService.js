@@ -9,10 +9,12 @@ export const setLoginService = async (email, password) => {
     })
     .then((res) => {
       setCookie("authToken", res.data.jwt, 1);
-      return {user:res.data.user,status:res.status};
+      setCookie("authId", res.data.user.id, 1);
+      setCookie("authMail", res.data.user.email, 1);
+      return res.status;
     })
     .catch((err) => {
-      return {user:{},status:err.response.status};
+      return err.response.status;
     });
 };
 
@@ -25,7 +27,9 @@ export const setRegisterService = async (email, password) => {
     })
     .then((res) => {
       setCookie("authToken", res.data.jwt, 1);
-      return {user:res.data.user,status:res.status};
+      setCookie("authId", res.data.user.id, 1);
+      setCookie("authMail", res.data.user.email, 1);
+      return res.status;
     })
     .catch((err) => {
       if (
@@ -37,54 +41,4 @@ export const setRegisterService = async (email, password) => {
         return 400;
       }
     });
-};
-
-export const setCategoryService = async () => {
-  return await axios
-    .get(axiosURL.category)
-    .then((res) => {
-      return res.data;
-    })
-    .catch((err) => {
-      return err.response.status;
-    });
-};
-
-export const setProductsService = async (categoryId,start) => {
-  if(categoryId && categoryId !== 0){
-    return await axios
-    .get(axiosURL.product+"?_limit=15&_start="+start+"&category="+String(categoryId))
-    .then((res) => {
-      return res.data;
-    })
-    .catch((err) => {
-      return err.response.status;
-    });
-  }
-  else{
-    return await axios
-    .get(axiosURL.product+"?_limit=15&_start="+start)
-    .then((res) => {
-      return res.data;
-    })
-    .catch((err) => {
-      return err.response.status;
-    });
-  }
-};
-
-export const setProductService = async (productId) => {
-  if(productId){
-    return await axios
-    .get(axiosURL.product+"?id="+String(productId))
-    .then((res) => {
-      return res.data[0];
-    })
-    .catch((err) => {
-      return err.response.status;
-    });
-  }
-  else{
-    return 404;
-  }
 };
