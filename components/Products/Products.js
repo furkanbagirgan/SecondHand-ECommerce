@@ -29,15 +29,15 @@ function Products() {
   }
 
   return (
-    <div id="productCon" className={styles.product}>
+    <div className={styles.product}>
       {filteredProducts?.length > 0 ? (
         <>
         <ul className={styles.productContainer}>
           {
             /* Here the characters are printed on the screen. */
-            filteredProducts?.map((product) => (
+            filteredProducts?.map((product,index) => (
               <li
-                key={product.id}
+                key={product.id? product.id : index}
                 className={styles.productItem}
                 onClick={() => router.push("/productDetail/" + product.id)}
               >

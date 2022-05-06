@@ -6,8 +6,10 @@ import LogoIcon from "../../constants/icons/LogoIcon";
 import UserIcon from "./../../constants/icons/UserIcon";
 import AddIcon from "./../../constants/icons/AddIcon";
 import { getCookie } from "../../utilies/cookies";
+import { useProduct } from "../../contexts/product";
 
 function Navbar() {
+  const {resetSkip} = useProduct();
   const [isAuth, setIsAuth] = useState(false);
   const router = useRouter();
 
@@ -29,6 +31,7 @@ function Navbar() {
             <button
               className={styles.addButton}
               onClick={() => {
+                resetSkip();
                 router.push("/addProduct");
               }}
             >
@@ -36,6 +39,7 @@ function Navbar() {
             </button>
             <button
               onClick={() => {
+                resetSkip();
                 router.push("/addProduct");
               }}
             >
@@ -44,6 +48,7 @@ function Navbar() {
             </button>
             <button
               onClick={() => {
+                resetSkip();
                 router.push("/account");
               }}
             >
@@ -60,6 +65,7 @@ function Navbar() {
           <div className={styles.navbarButtons}>
             <button
               onClick={() => {
+                resetSkip();
                 router.push("/login");
               }}
             >

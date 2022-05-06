@@ -8,6 +8,11 @@
   justify-content: center;
   background-color: #f2f2f2;
 
+  @include tablet() {
+    height: 500px;
+    padding-bottom: 20px;
+  }
+
   @include tabletSmall() {
     margin-top: 10px;
     height: 750px;
@@ -33,7 +38,7 @@
 
     .productImg {
       display: flex;
-      flex-basis: 47.29%;
+      flex-basis: 48.27%;
       height: 100%;
       justify-content: center;
       align-items: center;
@@ -46,7 +51,7 @@
       }
 
       .productPhoto {
-        object-fit: cover;
+        object-fit: contain;
         object-position: center;
         width: 100%;
         height: 100%;
@@ -67,7 +72,8 @@
     .productDetail {
       display: flex;
       flex-direction: column;
-      flex-basis: 47.29%;
+      flex-basis: 48.27%;
+      height: fit-content;
       padding-left: 10px;
       padding-top: 14px;
 
@@ -87,95 +93,120 @@
         word-break: keep-all;
         margin-bottom: 25px;
 
-        @include tabletSmall() {
-          font-size: 18px;
+        @include desktopMedium() {
+          font-size: 28px;
           margin-bottom: 10px;
         }
-      }
-
-      .productFeature {
-        font-size: 15px;
-        line-height: 20px;
-        color: #525252;
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        justify-content: start;
-        gap: 20px;
-        list-style: none;
 
         @include tabletSmall() {
           font-size: 18px;
-          gap: 10px;
-        }
-
-        &.title {
-          font-weight: bold;
         }
       }
 
-      .productPrice {
-        font-size: 23px;
-        font-weight: bold;
-        line-height: 23px;
-        color: #525252;
-        margin-top: 30px;
+      .changeReverse {
+        display: flex;
+        flex-direction: column;
 
         @include tabletSmall() {
-          font-size: 20px;
-          margin-top: 0px;
+          flex-direction: column-reverse;
+        }
+
+        .productFeature {
+          width: fit-content;
+          font-size: 18px;
+          line-height: 20px;
+          color: #525252;
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+          justify-content: start;
+          gap: 20px;
+          list-style: none;
+
+          @include desktopMedium() {
+            gap: 10px;
+            font-size: 15px;
+          }
+
+          &.title {
+            font-weight: bold;
+          }
+        }
+
+        .productPrice {
+          width: fit-content;
+          font-size: 23px;
+          font-weight: bold;
+          line-height: 23px;
+          color: #525252;
+          margin-top: 30px;
+
+          @include desktopMedium() {
+            font-size: 20px;
+            margin-top: 15px;
+          }
+
+          @include tabletSmall() {
+            margin-top: 0px;
+            margin-bottom: 10px;
+          }
         }
       }
 
       .productSelling {
-        font-size: 18px;
-        line-height: 24px;
-        font-weight: bold;
+        display: flex;
+        gap: 10px;
         margin-top: 30px;
 
-        @include tabletSmall(){
-            margin-top: 0px;
+        @include desktopMedium() {
+          flex-direction: column;
+          margin-top: 15px;
+        }
+
+        @include tabletSmall() {
+          display: none;
+          margin-top: 0px;
+        }
+
+        button {
+          width: 235px;
+          height: 45px;
+          border: 0px;
+          border-radius: 8px;
+          font-size: 18px;
+          line-height: 24px;
+          font-weight: bold;
+          color: #faad60;
+          background-color: #fff0e2;
+
+          @include tabletSmall() {
+            width: 172px;
+          }
+        }
+
+        .warningButton {
+          color: #faad60;
+          background-color: #fff0e2;
         }
 
         .buyButton {
-            width: 235px;
-            height: 45px;
-            border: 0px;
-            border-radius: 8px;
-            font-size: 18px;
-            line-height: 24px;
-            color: #fff;
-            background-color: #4b9ce2;
+          color: #fff;
+          background-color: #4b9ce2;
 
-            @include tabletSmall() {
-                width: 172px;
-              }
-
-            &:hover {
-              cursor: pointer;
-              opacity: 0.8;
-            }
+          &:hover {
+            cursor: pointer;
+            opacity: 0.8;
           }
+        }
 
-          .offerButton {
-            width: 235px;
-            height: 45px;
-            border: 0px;
-            border-radius: 8px;
-            font-size: 18px;
-            line-height: 24px;
-            color: #4b9ce2;
-            background-color: #F0F8FF;
-            margin-left: 10px;
+        .offerButton {
+          color: #4b9ce2;
+          background-color: #f0f8ff;
 
-            @include tabletSmall() {
-                width: 172px;
-              }
-
-            &:hover {
-              cursor: pointer;
-              opacity: 0.8;
-            }
+          &:hover {
+            cursor: pointer;
+            opacity: 0.8;
           }
+        }
       }
 
       .productDescription {
@@ -185,17 +216,78 @@
         padding-top: 30px;
         display: flex;
         flex-direction: column;
-        width: 480px;
+        width: 69.56%;
+
+        @include desktopMedium() {
+          width: 100%;
+          padding-top: 15px;
+        }
 
         @include tabletSmall() {
-            width: 100%;
-          }
+          width: 100%;
+        }
 
-        .desTitle{
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
+        .desTitle {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
       }
+    }
+  }
+}
+
+.bottomButtons {
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: none;
+
+  @include tabletSmall() {
+    display: block;
+  }
+
+  button {
+    width: 50%;
+    height: 45px;
+    border: 0px;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #faad60;
+    background-color: #fff0e2;
+  }
+
+  .warningButton {
+    width: 100%;
+    color: #faad60;
+    background-color: #fff0e2;
+  }
+
+  .buyButton {
+    color: #fff;
+    background-color: #4b9ce2;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  .offerButton {
+    color: #4b9ce2;
+    background-color: #f0f8ff;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
     }
   }
 }

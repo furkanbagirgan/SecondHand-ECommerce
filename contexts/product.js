@@ -47,6 +47,7 @@ const ProductProvider = ({ children }) => {
 
   const getProduct = async (productId) => {
     return await setProductService(productId).then(res=>{
+      skip=-3;
       if(res != null && res.constructor.name === "Object"){
         return {detail:{...res},status:1};
       }
@@ -84,6 +85,10 @@ const ProductProvider = ({ children }) => {
     return await getProducts(categoryId);
   }
 
+  const resetSkip = ()=>{
+    skip=-3;
+  }
+
   return (
     <ProductContext.Provider
       value={{
@@ -93,7 +98,8 @@ const ProductProvider = ({ children }) => {
         categories,
         activeCategory,
         getAllCategories,
-        changeCategory
+        changeCategory,
+        resetSkip
       }}
     >
       {children}

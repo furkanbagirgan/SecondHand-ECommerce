@@ -9,10 +9,10 @@ export const setLoginService = async (email, password) => {
     })
     .then((res) => {
       setCookie("authToken", res.data.jwt, 1);
-      return res.status;
+      return {user:res.data.user,status:res.status};
     })
     .catch((err) => {
-      return err.response.status;
+      return {user:{},status:err.response.status};
     });
 };
 
@@ -25,7 +25,7 @@ export const setRegisterService = async (email, password) => {
     })
     .then((res) => {
       setCookie("authToken", res.data.jwt, 1);
-      return res.status;
+      return {user:res.data.user,status:res.status};
     })
     .catch((err) => {
       if (
