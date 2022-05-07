@@ -1,0 +1,74 @@
+@import "../../styles/_mixin";
+
+.info {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+
+    @include tabletSmall() {
+        margin-top: 10px;
+    }
+
+    .infoContent {
+        background-color: #fff;
+        width: 77.1%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 16px;
+        padding-inline: 26px;
+
+        @include tabletSmall() {
+            width: 94.66%;
+          }
+
+        @include mobile() {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .userInfo {
+            display: flex;
+            align-items: center;
+            gap:10px;
+
+            span {
+                font-size: 15px;
+                line-height: 20px;
+                color: #525252;
+                font-weight: bold;
+            }
+        }
+
+        .logoutButton {
+            width: 100px;
+            height: 30px;
+            border: 0px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background-color: #f77474;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+
+            @include tabletSmall() {
+                width: 100px;
+            }
+
+            @include mobile() {
+                margin-top: 10px;
+            }
+        }
+    }
+}

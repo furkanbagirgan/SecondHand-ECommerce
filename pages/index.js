@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Head from "next/head";
 
 import Layout from "../components/Layout";
 import { ProductProvider } from "../contexts/product";
@@ -14,6 +15,11 @@ function HomePage() {
   const [showError, setShowError] = useState(false);
 
   return (
+    <>
+    <Head>
+        <title>İkinci El Project | Anasayfa</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
     <ProductProvider>
       <Layout>
         {showError ? (
@@ -39,6 +45,7 @@ function HomePage() {
         )}
       </Layout>
     </ProductProvider>
+    </>
   );
 }
 

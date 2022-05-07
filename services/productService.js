@@ -49,3 +49,26 @@ export const setProductService = async (productId) => {
     return 404;
   }
 };
+
+export const setCreateProductService = async (product) => {
+  if(product){
+    axios.defaults.headers.common["Authorization"]= `Bearer ${getCookie("authToken")}`;
+
+    const data=new FormData();
+    for(let key in product){
+      data.append(key, product[key]);
+    }
+
+    return await axios
+    .post(axiosURL.createProduct,data)
+    .then((res) => {
+      return res.data.status;
+    })
+    .catch((err) => {
+      return err.response.status;
+    });
+  }
+  else{
+    return 404;
+  }
+};

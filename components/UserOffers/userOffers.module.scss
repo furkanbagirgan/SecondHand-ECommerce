@@ -1,0 +1,289 @@
+@import "../../styles/_mixin";
+
+.offers {
+  width: 100%;
+  height: 65.64%;
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+
+  @include tablet() {
+    height: 500px;
+    padding-bottom: 10px;
+  }
+
+  @include tabletSmall() {
+    height: 750px;
+    padding-bottom: 30px;
+  }
+
+  .offersContent {
+    width: 77.1%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+
+    @include tabletSmall() {
+      width: 94.66%;
+    }
+
+    .offersHeader {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid #f2f2f2;
+      padding-top: 20px;
+      padding-inline: 30px;
+      gap: 34px;
+
+      @include tabletSmall() {
+        padding-top: 10px;
+      }
+
+      button {
+        height: 30.5px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .option {
+        font-size: 15px;
+        line-height: 20px;
+        color: #b1b1b1;
+      }
+
+      .tab {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid transparent;
+        color: #b1b1b1;
+      }
+
+      .selected {
+        background-color: transparent;
+        font-weight: bold;
+        color: #4b9ce2;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #4b9ce2;
+      }
+    }
+
+    .offersList {
+      width: 100%;
+      height: fit-content;
+      margin-top: 20px;
+      padding-inline: 30px;
+      overflow: auto;
+
+      @include tabletSmall() {
+        margin-top: 10px;
+        padding-inline: 10px;
+      }
+
+      .offerItem {
+        width: 100%;
+        height: 104px;
+        border: 1px solid #f2f2f2;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet() {
+          flex-direction: column;
+          align-items: flex-start;
+          height: auto;
+        }
+
+        .offerDetail {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          .productImg {
+            display: flex;
+            width: 78px;
+            height: 84px;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+
+            .productPhoto {
+              object-fit: contain;
+              object-position: center;
+              width: 100%;
+              height: 100%;
+              border-radius: 8px;
+            }
+
+            .noPhoto {
+              width: 28px;
+              height: 28px;
+            }
+          }
+
+          .productDetail {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            .productName {
+              max-width: 400px;
+              font-size: 18px;
+              line-height: 23px;
+              color: #555;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              @include mobile(){
+                width: 213px;
+              }
+            }
+
+            .offerPrice {
+              width: 230px;
+              height: 36px;
+              border-radius: 8px;
+              background-color: #f2f2f2;
+              font-size: 15px;
+              line-height: 20px;
+              font-weight: bold;
+              color: #525252;
+              display: flex;
+              padding-left: 10px;
+              align-items: center;
+              margin-top: 7px;
+
+              @include tabletSmall() {
+                width: 227px;
+                margin-top: 10px;
+              }
+
+              span {
+                font-weight: normal;
+                color: #b1b1b1;
+
+                @include tabletSmall() {
+                  font-size: 12px;
+                  line-height: 16px;
+                }
+              }
+            }
+          }
+        }
+
+        .offerStatus {
+          display: flex;
+          justify-content: flex-end;
+          width: 227px;
+          min-height: 30px;
+          margin-right: 21px;
+          align-items: center;
+
+          @include tablet() {
+            margin-right: 0px;
+            margin-left: 88px;
+          }
+
+          .solded {
+            font-size: 15px;
+            line-height: 23px;
+            color: #46af32;
+          }
+
+          .acceptOffer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            gap: 30px;
+
+            .buyButton {
+              width: 86px;
+              height: 30px;
+              border-radius: 8px;
+              background-color: #4b9ce2;
+              font-size: 15px;
+              line-height: 23px;
+              color: #fff;
+              border: none;
+              
+              &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+              }
+            }
+
+            .accepted {
+              font-size: 15px;
+              line-height: 23px;
+              color: #4b9ce2;
+            }
+          }
+
+          .denied {
+            font-size: 15px;
+            line-height: 23px;
+            color: #f77474;
+          }
+
+          .offerOptions {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            gap: 10px;
+
+            .acceptButton {
+              width: 108px;
+              height: 30px;
+              border-radius: 8px;
+              background-color: #4b9ce2;
+              font-size: 15px;
+              line-height: 23px;
+              color: #fff;
+              border: none;
+              
+              &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+              }
+            }
+
+            .deniedButton {
+              width: 108px;
+              height: 30px;
+              border-radius: 8px;
+              background-color: #f77474;
+              font-size: 15px;
+              line-height: 23px;
+              color: #fff;
+              border: none;
+              
+              &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+              }
+            }
+          }
+
+          .waiting {
+            font-size: 15px;
+            line-height: 23px;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+}

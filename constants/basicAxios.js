@@ -10,5 +10,10 @@ export const axiosURL = {
   product: "/products",
   giveOffer: "/offers",
   deleteOffer: "/offers/",
-  buyProduct: "/products/"
+  buyProduct: "/products/",
+  givenOffers: "/offers",
+  receivedOffers: "/products/",
+  acceptOffer: "/offers/",
+  deniedOffer: "/offers/",
+  createProduct: "/products"
 };

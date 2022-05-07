@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarContent}>
-        <div className={styles.logo}>
+        <div className={styles.logo} onClick={()=>{router.push("/")}}>
           <LogoIcon style={styles.logoImg} />
         </div>
         {isAuth ? (

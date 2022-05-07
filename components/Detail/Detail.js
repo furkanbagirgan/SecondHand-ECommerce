@@ -134,13 +134,13 @@ function Detail({ showError }) {
                   <div className={styles.prices}>
                     <div className={styles.productPrice}>
                       {product.price
-                        ? product.price + ",00 TL"
+                        ? product.price.toLocaleString("tr-TR", { maximumFractionDigits: 2, minimumFractionDigits: 2 }) + " TL"
                         : "Belirtilmemiş"}
                     </div>
                     {hasOffer.offerStatus && (
                       <div className={styles.offerPrice}>
                         <span>Verilen Teklif:</span>
-                        {hasOffer.offerPrice + ",00 TL"}
+                        {hasOffer.offerPrice.toLocaleString("tr-TR", { maximumFractionDigits: 2, minimumFractionDigits: 2 }) + " TL"}
                       </div>
                     )}
                   </div>

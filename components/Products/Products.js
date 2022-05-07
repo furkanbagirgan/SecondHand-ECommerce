@@ -72,7 +72,7 @@ function Products() {
                     </span>
                   </div>
                   <div className={styles.productPrice}>
-                    {product.price ? product.price + ",00 TL" : "Belirsiz"}
+                    {product.price ? product.price.toLocaleString("tr-TR", { maximumFractionDigits: 2, minimumFractionDigits: 2 }) + " TL" : "Belirsiz"}
                   </div>
                 </div>
               </li>
