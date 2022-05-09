@@ -24,7 +24,7 @@ In the project, operations are carried out over the api and these operations are
 - SASS
 - Axios
 - Toastify
-- Headless UI
+- Headless UI (just Listbox)
 - Vercel
 
 ## Installation
@@ -85,7 +85,7 @@ yarn dev
 <kbd><img src="screens/homePageMobile.png" width="30%"></kbd>
 
 ### Product Detail Page
-<kbd><img src="screens/productDetailPageMobile.png" width="30%"><img src="screens/productDetailPageMobile(2).png" width="30%"></kbd>
+<kbd><img src="screens/productDetailPageMobile.png" width="30%"><img src="screens/productDetailPageMobile (2).png" width="30%"></kbd>
 
 ### Offer Dialog
 <kbd><img src="screens/offerDialogMobile.png" width="30%"></kbd>
