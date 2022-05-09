@@ -65,10 +65,7 @@ In the project, operations are carried out over the api and these operations are
 <img src="screens/homePageMobile.png" width="30%">
 
 ### Product Detail Page
-<div style="display:flex;">
-  <img src="screens/productDetailPageMobile.png" width="30%">
-  <img src="screens/productDetailPageMobile2.png" width="30%">
-</div>
+<img src="screens/productDetailPageMobile.png" width="30%"><img src="screens/productDetailPageMobile2.png" width="30%">
 
 ### Offer Dialog
 <img src="screens/offerDialogMobile.png" width="30%">
