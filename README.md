@@ -29,7 +29,7 @@ In the project, operations are carried out over the api and these operations are
 
 ## Screens for Desktop
 ### Login Page
-<img src="screens/loginPage.png" width="100%" style="border: 1px solid #b1b1b1">
+<img src="screens/loginPage.png" width="100%" style="border: 5px solid #bbb">
 
 ### Register Page
 <img src="screens/registerPage.png" width="100%">
