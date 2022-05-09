@@ -29,7 +29,7 @@ In the project, operations are carried out over the api and these operations are
 
 ## Screens for Desktop
 ### Login Page
-<img src="screens/loginPage.png" width="100%">
+<kbd><img src="screens/loginPage.png" width="100%"></kbd>
 
 ### Register Page
 <img src="screens/registerPage.png" width="100%">
@@ -65,7 +65,7 @@ In the project, operations are carried out over the api and these operations are
 <img src="screens/homePageMobile.png" width="30%">
 
 ### Product Detail Page
-<img src="screens/productDetailPageMobile.png" width="30%"><img src="screens/productDetailPageMobile2.png" width="30%">
+<img src="screens/productDetailPageMobile.png" width="30%"><img src="screens/productDetailPageMobile(2).png" width="30%">
 
 ### Offer Dialog
 <img src="screens/offerDialogMobile.png" width="30%">
@@ -77,5 +77,4 @@ In the project, operations are carried out over the api and these operations are
 <img src="screens/accountPageMobile.png" width="30%">
 
 ### Add Product Page
-<img src="screens/addProductPageMobile.png" width="30%">
-<img src="screens/addProductPageMobile2.png" width="30%">
+<img src="screens/addProductPageMobile.png" width="30%"><img src="screens/addProductPageMobile2.png" width="30%">
