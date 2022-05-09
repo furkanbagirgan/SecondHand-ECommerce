@@ -29,7 +29,7 @@ In the project, operations are carried out over the api and these operations are
 
 ## Screens for Desktop
 ### Login Page
-<img src="screens/loginPage.png" width="100%" style="border: 5px solid #555">
+<img src="screens/loginPage.png" width="100%">
 
 ### Register Page
 <img src="screens/registerPage.png" width="100%">
@@ -47,8 +47,10 @@ In the project, operations are carried out over the api and these operations are
 <img src="screens/buyDialog.png" width="100%">
 
 ### Account Page
+<div style="display:flex;">
 <img src="screens/accountPage.png" width="100%">
 <img src="screens/accountPage2.png" width="100%">
+</div>
 
 ### Add Product Page
 <img src="screens/addProductPage.png" width="100%">
