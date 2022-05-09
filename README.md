@@ -8,24 +8,24 @@ This project, made with Reactjs and Nextjs, is a second-hand site that allows us
 
 In the project, operations are carried out over the api and these operations are as follows;
 
--Process of registering
--Logging in
--Listing products by categories
--Sending offers or purchasing requests to products
--Listing and approving or rejecting incoming offers
--Seeing the status of discarded offers
--Viewing product details
--Adding products
+- Process of registering
+- Logging in
+- Listing products by categories
+- Sending offers or purchasing requests to products
+- Listing and approving or rejecting incoming offers
+- Seeing the status of discarded offers
+- Viewing product details
+- Adding products
 
 ## Used technologies
--Reactjs
--Nextjs
--Context API
--SASS
--Axios
--Toastify
--Headless UI
--Vercel
+- Reactjs
+- Nextjs
+- Context API
+- SASS
+- Axios
+- Toastify
+- Headless UI
+- Vercel
 
 ## Screens for Desktop
 ### Login Page
@@ -56,27 +56,27 @@ In the project, operations are carried out over the api and these operations are
 
 ## Screens for Mobile
 ### Login Page
-<img src="screens/loginPageMobile.png" width="50%">
+<img src="screens/loginPageMobile.png" width="30%">
 
 ### Register Page
-<img src="screens/registerPageMobile.png" width="50%">
+<img src="screens/registerPageMobile.png" width="30%">
 
 ### Home Page
-<img src="screens/homePageMobile.png" width="50%">
+<img src="screens/homePageMobile.png" width="30%">
 
 ### Product Detail Page
-<img src="screens/productDetailPageMobile.png" width="50%">
-<img src="screens/productDetailPageMobile2.png" width="50%">
+<img src="screens/productDetailPageMobile.png" width="30%">
+<img src="screens/productDetailPageMobile2.png" width="30%">
 
 ### Offer Dialog
-<img src="screens/offerDialogMobile.png" width="50%">
+<img src="screens/offerDialogMobile.png" width="30%">
 
 ### Buy Dilaog
-<img src="screens/buyDialogMobile.png" width="50%">
+<img src="screens/buyDialogMobile.png" width="30%">
 
 ### Account Page
-<img src="screens/accountPageMobile.png" width="50%">
+<img src="screens/accountPageMobile.png" width="30%">
 
 ### Add Product Page
-<img src="screens/addProductPageMobile.png" width="50%">
-<img src="screens/addProductPageMobile2.png" width="50%">
+<img src="screens/addProductPageMobile.png" width="30%">
+<img src="screens/addProductPageMobile2.png" width="30%">
