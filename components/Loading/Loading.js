@@ -1,3 +1,5 @@
+//component showing loading
+
 import React from "react";
 
 import styles from "./loading.module.scss";

@@ -1,3 +1,5 @@
+//toastify structure that provides notifications to be shown on the screen
+
 import { toast } from "react-toastify";
 
 const toastMessage = (type, message) => {

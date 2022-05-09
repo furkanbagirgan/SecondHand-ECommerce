@@ -1,4 +1,5 @@
 /* Mixin for media queries */
+
 @mixin desktop() {
   @media (max-width: 1537px) {
     @content;
@@ -39,17 +40,4 @@
   @media (max-width: 400px) {
     @content;
   }
-}
-
-/* Mixin for flexbox */
-
-@mixin display-flex(
-  $flex-direction: row,
-  $align-items: unset,
-  $justify-content: unset
-) {
-  display: flex;
-  flex-direction: $flex-direction;
-  align-items: $align-items;
-  justify-content: $justify-content;
 }

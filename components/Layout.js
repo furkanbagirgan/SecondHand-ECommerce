@@ -1,11 +1,13 @@
+//component showing layout
+
 import Navbar from "../components/Navbar/Navbar";
 
-function Layout({children}) {
+function Layout({ children }) {
   return (
-      <div className="main">
-          <Navbar />
-          {children}
-      </div>
+    <div className="main">
+      <Navbar />
+      {children}
+    </div>
   );
 }
 

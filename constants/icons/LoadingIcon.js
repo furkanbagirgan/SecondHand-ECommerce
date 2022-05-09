@@ -1,6 +1,7 @@
+//The svg structure that creates the loading icon
+
 import React from "react";
 
-//Here, the loading icon in which the register button will be located is set.
 const LoadingIcon = (props) => (
   <svg
     width={props?.size || "200"}

@@ -1,3 +1,5 @@
+//component showing navbar
+
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -9,7 +11,7 @@ import { getCookie } from "../../utilies/cookies";
 import { useProduct } from "../../contexts/product";
 
 function Navbar() {
-  const {resetSkip} = useProduct();
+  const { resetSkip } = useProduct();
   const [isAuth, setIsAuth] = useState(false);
   const router = useRouter();
 
@@ -23,7 +25,12 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarContent}>
-        <div className={styles.logo} onClick={()=>{router.push("/")}}>
+        <div
+          className={styles.logo}
+          onClick={() => {
+            router.push("/");
+          }}
+        >
           <LogoIcon style={styles.logoImg} />
         </div>
         {isAuth ? (

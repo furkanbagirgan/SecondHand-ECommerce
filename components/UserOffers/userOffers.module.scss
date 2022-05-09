@@ -1,3 +1,5 @@
+//styles for user offers components
+
 @import "../../styles/_mixin";
 
 .offers {
@@ -145,7 +147,7 @@
               overflow: hidden;
               text-overflow: ellipsis;
 
-              @include mobile(){
+              @include mobile() {
                 width: 213px;
               }
             }
@@ -217,7 +219,7 @@
               line-height: 23px;
               color: #fff;
               border: none;
-              
+
               &:hover {
                 cursor: pointer;
                 opacity: 0.8;
@@ -253,7 +255,7 @@
               line-height: 23px;
               color: #fff;
               border: none;
-              
+
               &:hover {
                 cursor: pointer;
                 opacity: 0.8;
@@ -269,7 +271,7 @@
               line-height: 23px;
               color: #fff;
               border: none;
-              
+
               &:hover {
                 cursor: pointer;
                 opacity: 0.8;

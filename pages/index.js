@@ -1,3 +1,5 @@
+//main page showing home page
+
 import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
@@ -16,35 +18,31 @@ function HomePage() {
 
   return (
     <>
-    <Head>
+      <Head>
         <title>İkinci El Project | Anasayfa</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-    <ProductProvider>
-      <Layout>
-        {showError ? (
-          <Error />
-        ) : (
-          <>
-            <div className="banner">
-              <div className="bannerContent">
-                <Image
-                  className="bannerImg"
-                  src={indexBanner}
-                  alt="Tarzını yansıtan ürünleri keşfet"
-                />
+      <ProductProvider>
+        <Layout>
+          {showError ? (
+            <Error />
+          ) : (
+            <>
+              <div className="banner">
+                <div className="bannerContent">
+                  <Image
+                    className="bannerImg"
+                    src={indexBanner}
+                    alt="Tarzını yansıtan ürünleri keşfet"
+                  />
+                </div>
               </div>
-            </div>
-            <Categories loading={setLoading} showError={setShowError} />
-            {loading ? (
-              <Loading size={75} color="#4b9ce2"/>
-            ) : (
-              <Products/>
-            )}
-          </>
-        )}
-      </Layout>
-    </ProductProvider>
+              <Categories loading={setLoading} showError={setShowError} />
+              {loading ? <Loading size={75} color="#4b9ce2" /> : <Products />}
+            </>
+          )}
+        </Layout>
+      </ProductProvider>
     </>
   );
 }

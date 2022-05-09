@@ -1,3 +1,5 @@
+//page that performs api-sided auth operations
+
 import axios, { axiosURL } from "../constants/basicAxios";
 import { setCookie } from "../utilies/cookies";
 

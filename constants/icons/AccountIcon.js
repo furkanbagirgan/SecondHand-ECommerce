@@ -1,6 +1,7 @@
+//The svg structure that creates the account icon
+
 import React from "react";
 
-//Here, the loading icon in which the register button will be located is set.
 const AccountIcon = (props) => (
   <svg
     width={props?.size || "38"}
@@ -44,7 +45,7 @@ const AccountIcon = (props) => (
         >
           <g id="Group_6874" data-name="Group 6874" transform="translate(0 0)">
             <path
-              fill= "#f5f5f5"
+              fill="#f5f5f5"
               id="Path_14460"
               data-name="Path 14460"
               d="M231.9,237.121a6.266,6.266,0,0,0-.675-1.233,8.359,8.359,0,0,0-5.784-3.641,1.238,1.238,0,0,0-.852.205,7.165,7.165,0,0,1-8.456,0,1.1,1.1,0,0,0-.852-.205,8.3,8.3,0,0,0-5.784,3.641,7.242,7.242,0,0,0-.675,1.233.624.624,0,0,0,.029.558,11.666,11.666,0,0,0,.793,1.175A11.12,11.12,0,0,0,211,240.38a17.539,17.539,0,0,0,1.35,1.175,13.391,13.391,0,0,0,15.973,0,12.967,12.967,0,0,0,1.35-1.175,13.556,13.556,0,0,0,1.351-1.527,10.324,10.324,0,0,0,.793-1.175A.5.5,0,0,0,231.9,237.121Z"

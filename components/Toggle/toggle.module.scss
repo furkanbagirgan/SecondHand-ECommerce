@@ -1,0 +1,62 @@
+//styles for toggle
+
+.holder {
+  position: relative;
+  height: 24px;
+  width: 44px;
+  border-radius: 50px;
+  background: rgba(235, 235, 235, 1);
+  transition: 0.15s background ease-out;
+}
+
+.toggle {
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 60px;
+  background: #fff;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+@keyframes toggleOn {
+  0% {
+    left: -10px;
+  }
+  15% {
+    left: 11px;
+  }
+  100% {
+    left: 22px;
+  }
+}
+@keyframes toggleOff {
+  0% {
+    left: 22px;
+  }
+  15% {
+    left: 15px;
+  }
+  100% {
+    left: 1px;
+  }
+}
+.off {
+  background: #EBEBEB;
+}
+
+.on {
+  background: #4B9CE2;
+}
+
+.on .toggle {
+  animation: toggleOn 0.15s ease-out;
+  left: 22px;
+}
+
+.off .toggle {
+  animation: toggleOff 0.15s ease-out;
+  background-color: #fff;
+  left: 1px;
+}

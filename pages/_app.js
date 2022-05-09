@@ -1,3 +1,5 @@
+//main page for nextjs
+
 import React from "react";
 import { ToastContainer } from "react-toastify";
 

@@ -1,3 +1,5 @@
+//component showing categories
+
 import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
@@ -41,7 +43,7 @@ function Categories({ loading, showError }) {
 
   const categoryClick = async (categoryName, categoryId) => {
     loading(true);
-    const res = await changeCategory(categoryName, categoryId,true);
+    const res = await changeCategory(categoryName, categoryId, true);
     if (res !== 1 && res !== 2 && res !== 3) {
       showError(true);
     } else {
@@ -57,7 +59,9 @@ function Categories({ loading, showError }) {
         {categories?.map((category) => (
           <span
             key={category.id}
-            className={activeCategory.name === category.name ? styles.active : ""}
+            className={
+              activeCategory.name === category.name ? styles.active : ""
+            }
             onClick={() => {
               categoryClick(category.name, category.id);
             }}

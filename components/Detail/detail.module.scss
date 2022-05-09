@@ -1,3 +1,5 @@
+//styles for detail components
+
 @import "../../styles/_mixin";
 
 .detail {
@@ -168,7 +170,7 @@
             width: 230px;
             height: 36px;
             border-radius: 8px;
-            background-color: #F2F2F2;
+            background-color: #f2f2f2;
             font-size: 15px;
             line-height: 20px;
             font-weight: bold;
@@ -186,7 +188,7 @@
 
             span {
               font-weight: normal;
-              color: #B1B1B1;
+              color: #b1b1b1;
 
               @include tabletSmall() {
                 font-size: 12px;

@@ -1,3 +1,5 @@
+//component showing register form
+
 import React, { useState } from "react";
 import Link from "next/link";
 import { useFormik } from "formik";

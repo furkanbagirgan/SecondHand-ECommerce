@@ -1,5 +1,288 @@
+//styles for product info components
+
 @import "../../styles/_mixin";
 
 .info {
-  
+  width: 54.78%;
+  height: 100%;
+  padding-right: 47.5px;
+  border-right: 1px solid #f2f2f2;
+  overflow: auto;
+
+  @include tabletSmall() {
+    border-right: none;
+    width: 100%;
+    height: fit-content;
+    overflow: visible;
+    padding-right: 0px;
+  }
+
+  label {
+    color: #525252;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .detailTitle {
+    font-size: 25px;
+    line-height: 23px;
+    font-weight: bold;
+    margin-top: 4px;
+    margin-bottom: 25px;
+    color: #525252;
+
+    @include tabletSmall() {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .formRow {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    input,
+    textarea {
+      background-color: #f4f4f4;
+      font-size: 16px;
+      line-height: 22px;
+      color: #3e3e3e;
+      height: 45px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      padding-block: 12px;
+      padding-inline: 15px;
+      margin-bottom: 25px;
+
+      @include tabletSmall() {
+        margin-bottom: 15px;
+      }
+    }
+
+    textarea {
+      resize: none;
+      width: 100%;
+      height: 92px;
+
+      @include tabletSmall() {
+        height: 90px;
+      }
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      font-size: 16px;
+      line-height: 22px;
+      color: #99a0a7;
+    }
+
+    input:active,
+    textarea:active,
+    input:focus,
+    textarea:focus {
+      border: 1px solid #4b9ce2;
+      background-color: #f0f8ff;
+    }
+  }
+
+  .formRowMulti {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+
+    @include tabletSmall() {
+      flex-direction: column;
+    }
+
+    .inputGroupLeft {
+      width: 50%;
+      padding-right: 12px;
+      margin-bottom: 25px;
+
+      @include tabletSmall() {
+        width: 100%;
+        padding-right: 0px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .inputGroupRight {
+      width: 50%;
+      padding-left: 12px;
+      margin-bottom: 25px;
+
+      @include tabletSmall() {
+        width: 100%;
+        padding-left: 0px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .combo {
+      background: #f4f4f4;
+      border: none;
+      width: 100%;
+      height: 45px;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 22px;
+      color: #99a0a7;
+      text-align: left;
+      padding-inline: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .comboError {
+      background: #fff2f2;
+      border: 1px solid #f77474;
+      width: 100%;
+      height: 45px;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 22px;
+      color: #f77474;
+      text-align: left;
+      padding-inline: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .priceRow {
+    position: relative;
+
+    & > input {
+      width: 32.32%;
+      margin-bottom: 11px;
+
+      @include tabletSmall() {
+        width: 100%;
+      }
+    }
+
+    & > p {
+      position: absolute;
+      top: 37px;
+      left: 27.8%;
+      font-size: 16px;
+      line-height: 22px;
+      color: #99a0a7;
+
+      @include tabletSmall() {
+        left: 88%;
+      }
+    }
+
+    & > span {
+      font-size: 12px;
+      line-height: 16px;
+      color: #f77474 !important;
+      margin-top: -15px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .offerRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 32.32%;
+
+    @include tabletSmall() {
+      width: 100%;
+    }
+
+    .offeropt {
+      color: #b1b1b1;
+    }
+
+    .offeroptActive {
+      font-size: 15px;
+      line-height: 22px;
+      color: #3e3e3e;
+    }
+  }
+}
+
+.image {
+  width: 45.22%;
+  height: 100%;
+  padding-left: 47.5px;
+  display: flex;
+  flex-direction: column;
+
+  @include tabletSmall() {
+    margin-top: 25px;
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  .imageTitle {
+    font-size: 25px;
+    line-height: 23px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #525252;
+
+    @include tabletSmall() {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .imageUploading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    @include tabletSmall() {
+      justify-content: flex-start;
+      height: fit-content;
+    }
+
+    .saveButton {
+      align-self: flex-end;
+      width: 44.87%;
+      height: 45px;
+      border: none;
+      background-color: #4b9ce2;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+
+      @include tabletSmall() {
+        align-self: center;
+        width: 100%;
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+.notValid {
+  border: 1px solid #f77474 !important;
+  background-color: #fff2f2 !important;
+  color: #f77474 !important;
+}
+
+.notValidIcon {
+  color: #f77474 !important;
 }

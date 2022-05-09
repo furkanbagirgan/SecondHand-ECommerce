@@ -1,3 +1,5 @@
+//component showing user offers
+
 import React, { useEffect, useState } from "react";
 
 import styles from "./userOffers.module.scss";
@@ -12,7 +14,8 @@ function UserOffers({ showError }) {
   const [deniedloading, setDeniedLoading] = useState(false);
   const [offers, setOffers] = useState([]);
   const [selectedOption, setSelectedOption] = useState("receivedOffers");
-  const { getGivenOffers, getReceivedOffers,acceptOffer,deniedOffer } = useOffer();
+  const { getGivenOffers, getReceivedOffers, acceptOffer, deniedOffer } =
+    useOffer();
   const [buyDialog, setBuyDialog] = useState(false);
   const [productId, setProductId] = useState("");
 
@@ -39,25 +42,25 @@ function UserOffers({ showError }) {
 
   const acOffer = async (offerId) => {
     setAcceptLoading(true);
-    const res=await acceptOffer(offerId);
+    const res = await acceptOffer(offerId);
     if (res == 200) {
-        toastMessage("success", "Teklif Onaylandı");
-        await getOffers();
-      } else {
-        toastMessage("error", "Bir hata ile karşılaşıldı!");
-      }
+      toastMessage("success", "Teklif Onaylandı");
+      await getOffers();
+    } else {
+      toastMessage("error", "Bir hata ile karşılaşıldı!");
+    }
     setAcceptLoading(false);
   };
 
   const denOffer = async (offerId) => {
     setDeniedLoading(true);
-    const res=await deniedOffer(offerId);
+    const res = await deniedOffer(offerId);
     if (res == 200) {
-        toastMessage("success", "Teklif Reddedildi");
-        await getOffers();
-      } else {
-        toastMessage("error", "Bir hata ile karşılaşıldı!");
-      }
+      toastMessage("success", "Teklif Reddedildi");
+      await getOffers();
+    } else {
+      toastMessage("error", "Bir hata ile karşılaşıldı!");
+    }
     setDeniedLoading(false);
   };
 
@@ -142,8 +145,13 @@ function UserOffers({ showError }) {
                   </div>
                   <div className={styles.offerStatus}>
                     {offer.isStatus != null ? (
-                      offer.product.isSold ? (<span className={styles.solded}>Satın Alındı</span>) :
-                      (offer.isStatus ? (
+                      offer.product.isSold ? (
+                        selectedOption === "givenOffers" ? (
+                          <span className={styles.solded}>Satın Alındı</span>
+                        ) : (
+                          <span className={styles.solded}>Satıldı</span>
+                        )
+                      ) : offer.isStatus ? (
                         <div className={styles.acceptOffer}>
                           {selectedOption === "givenOffers" && (
                             <button
@@ -158,10 +166,9 @@ function UserOffers({ showError }) {
                           )}
                           <span className={styles.accepted}>Onaylandı</span>
                         </div>
-                      )
-                       : (
+                      ) : (
                         <span className={styles.denied}>Reddedildi</span>
-                      ))
+                      )
                     ) : selectedOption === "receivedOffers" ? (
                       <div className={styles.offerOptions}>
                         <button
@@ -198,7 +205,7 @@ function UserOffers({ showError }) {
         </div>
       </div>
       <BuyDialog
-        product={{id:productId}}
+        product={{ id: productId }}
         showDialog={buyDialog}
         closeDialog={() => closeDialog()}
       />

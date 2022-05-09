@@ -1,6 +1,7 @@
+//The svg structure that creates the logo icon
+
 import React from "react";
 
-//Here, the dark icon in which the left section will be located is set.
 const LogoIcon = ({ style }) => (
   <svg className={style} viewBox="0 0 224.489 73.195">
     <g

@@ -1,3 +1,5 @@
+//The page where cookies are processed
+
 export const getCookie = (cname) => {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -23,7 +25,7 @@ export const setCookie = (cname, cvalue, exdays) => {
 
 export const deleteCookie = (cname) => {
   const d = new Date();
-  d.setTime(d.getTime()-1);
+  d.setTime(d.getTime() - 1);
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=;" + expires + ";path=/";
 };

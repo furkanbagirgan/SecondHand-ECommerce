@@ -1,3 +1,5 @@
+//main page showing register
+
 import React, { useEffect } from "react";
 import Head from "next/head";
 
@@ -7,7 +9,6 @@ import RegisterPage from "../components/Register/RegisterPage";
 function Register() {
   useEffect(() => {}, []);
 
-  //Here, the components of the first opened page are printed on the screen.
   return (
     <>
       <Head>

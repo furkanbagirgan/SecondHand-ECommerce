@@ -1,4 +1,6 @@
-import React, { useState,useEffect } from "react";
+//main page showing user account
+
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
@@ -21,7 +23,6 @@ function Account() {
     }
   }, []);
 
-  //Here, the components of the first opened page are printed on the screen.
   return (
     <>
       <Head>
@@ -36,7 +37,7 @@ function Account() {
             <>
               <UserInfo />
               <OfferProvider>
-                <UserOffers showError={setShowError}/>
+                <UserOffers showError={setShowError} />
               </OfferProvider>
             </>
           )}

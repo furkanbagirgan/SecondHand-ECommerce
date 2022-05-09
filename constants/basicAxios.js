@@ -1,3 +1,5 @@
+//For axios, the structure it makes to use the specified rules
+
 import axios from "axios";
 
 export const baseURL = "https://bootcamp.akbolat.net";
@@ -15,5 +17,9 @@ export const axiosURL = {
   receivedOffers: "/products/",
   acceptOffer: "/offers/",
   deniedOffer: "/offers/",
-  createProduct: "/products"
+  createProduct: "/products",
+  colors: "/colors",
+  usingStatus: "/using-statuses",
+  brands: "/brands",
+  imageUpload: "/upload/",
 };

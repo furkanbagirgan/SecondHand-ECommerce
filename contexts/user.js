@@ -1,3 +1,5 @@
+//context structure that stores user data and transactions
+
 import React, { useContext } from "react";
 import { setLoginService, setRegisterService } from "../services/authService";
 

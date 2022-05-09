@@ -1,0 +1,124 @@
+//styles for image uploader
+
+@import "../../styles/_mixin";
+
+.upload {
+  display: flex;
+  width: 100%;
+  height: 164px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #b1b1b1;
+  border-radius: 10px;
+  position: relative;
+
+  @include tabletSmall() {
+    height: 113px;
+  }
+
+  .imageContent {
+    position: relative;
+    align-self: flex-start;
+
+    .image {
+      width: 113px;
+      height: 113px;
+      max-width: 113px;
+      max-height: 113px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #eaeaea;
+      margin: 10px;
+      align-self: flex-start;
+      justify-self: flex-start;
+
+      @include tabletSmall() {
+        width: 108px;
+        height: 108px;
+        max-width: 108px;
+        max-height: 108px;
+      }
+    }
+
+    .deleteButton {
+      position: absolute;
+      top: 6px;
+      left: 110px;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      background-color: #525252;
+      color: #fff;
+      border-radius: 100%;
+      text-align: center;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+
+  .uploadContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    & > * {
+      padding: 5px;
+      font-size: 14px;
+      color: #525252;
+    }
+
+    .uploadText {
+      @include tabletSmall() {
+        display: none;
+      }
+    }
+
+    .uploadButton {
+      position: relative;
+      background-color: #f4f4f4;
+      color: #b1b1b1;
+      width: 122px;
+      height: 30px;
+      font-size: 15px;
+      line-height: 0px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #4b9ce2;
+        color: #fff;
+      }
+
+      & > input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 122px;
+        height: 30px;
+        font-size: 15px;
+      }
+    }
+
+    .uploadInfoText {
+      color: #b1b1b1;
+      font-size: 12px;
+    }
+
+    .warning {
+      color: #f77474;
+    }
+  }
+}
+
+.uploadActive {
+  border: 0px;
+}
+
+.notValid {
+  border: 1px solid #f77474 !important;
+  color: #f77474 !important;
+}

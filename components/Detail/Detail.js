@@ -1,3 +1,5 @@
+//component showing product detail
+
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -134,13 +136,19 @@ function Detail({ showError }) {
                   <div className={styles.prices}>
                     <div className={styles.productPrice}>
                       {product.price
-                        ? product.price.toLocaleString("tr-TR", { maximumFractionDigits: 2, minimumFractionDigits: 2 }) + " TL"
+                        ? product.price.toLocaleString("tr-TR", {
+                            maximumFractionDigits: 2,
+                            minimumFractionDigits: 2,
+                          }) + " TL"
                         : "Belirtilmemiş"}
                     </div>
                     {hasOffer.offerStatus && (
                       <div className={styles.offerPrice}>
                         <span>Verilen Teklif:</span>
-                        {hasOffer.offerPrice.toLocaleString("tr-TR", { maximumFractionDigits: 2, minimumFractionDigits: 2 }) + " TL"}
+                        {hasOffer.offerPrice.toLocaleString("tr-TR", {
+                          maximumFractionDigits: 2,
+                          minimumFractionDigits: 2,
+                        }) + " TL"}
                       </div>
                     )}
                   </div>
@@ -158,7 +166,9 @@ function Detail({ showError }) {
                         className={styles.buyButton}
                         onClick={() => setBuyDialog(true)}
                         disabled={offerLoading}
-                      >Satın Al</button>
+                      >
+                        Satın Al
+                      </button>
                       {(product.isOfferable ? product.isOfferable : false) &&
                       hasOffer.offerStatus ? (
                         <button
@@ -177,7 +187,9 @@ function Detail({ showError }) {
                           className={styles.offerButton}
                           onClick={() => setOfferDialog(true)}
                           disabled={offerLoading}
-                        >Teklif Ver</button>
+                        >
+                          Teklif Ver
+                        </button>
                       )}
                     </>
                   )}
@@ -194,41 +206,45 @@ function Detail({ showError }) {
         </div>
       </div>
       <div className={styles.bottomButtons}>
-      {!isAuth || (product.isSold ? product.isSold : false) ? (
-                    <button className={styles.warningButton}>
-                      {(product.isSold ? product.isSold : false)
-                        ? "Bu Ürün Satışta Değil"
-                        : "Lütfen Giriş Yapın"}
-                    </button>
-                  ) : (
-                    <>
-                      <button
-                        className={styles.buyButton}
-                        onClick={() => setBuyDialog(true)}
-                        disabled={offerLoading}
-                      >Satın Al</button>
-                      {(product.isOfferable ? product.isOfferable : false) &&
-                      hasOffer.offerStatus ? (
-                        <button
-                          className={styles.offerButton}
-                          onClick={() => backOffer()}
-                          disabled={offerLoading}
-                        >
-                          {offerLoading ? (
-                            <Loading size={30} color="#4b9ce2" />
-                          ) : (
-                            "Teklifi Geri Çek"
-                          )}
-                        </button>
-                      ) : (
-                        <button
-                          className={styles.offerButton}
-                          onClick={() => setOfferDialog(true)}
-                          disabled={offerLoading}
-                        >Teklif Ver</button>
-                      )}
-                    </>
-                  )}
+        {!isAuth || (product.isSold ? product.isSold : false) ? (
+          <button className={styles.warningButton}>
+            {(product.isSold ? product.isSold : false)
+              ? "Bu Ürün Satışta Değil"
+              : "Lütfen Giriş Yapın"}
+          </button>
+        ) : (
+          <>
+            <button
+              className={styles.buyButton}
+              onClick={() => setBuyDialog(true)}
+              disabled={offerLoading}
+            >
+              Satın Al
+            </button>
+            {(product.isOfferable ? product.isOfferable : false) &&
+            hasOffer.offerStatus ? (
+              <button
+                className={styles.offerButton}
+                onClick={() => backOffer()}
+                disabled={offerLoading}
+              >
+                {offerLoading ? (
+                  <Loading size={30} color="#4b9ce2" />
+                ) : (
+                  "Teklifi Geri Çek"
+                )}
+              </button>
+            ) : (
+              <button
+                className={styles.offerButton}
+                onClick={() => setOfferDialog(true)}
+                disabled={offerLoading}
+              >
+                Teklif Ver
+              </button>
+            )}
+          </>
+        )}
       </div>
       <OfferDialog
         product={product}

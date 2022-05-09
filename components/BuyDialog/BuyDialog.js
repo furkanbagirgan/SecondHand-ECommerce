@@ -1,9 +1,10 @@
+//component showing buy dialog
+
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import styles from "./buyDialog.module.scss";
 import Loading from "../Loading/Loading";
-import CloseIcon from "./../../constants/icons/CloseIcon";
 import { useOffer } from "../../contexts/offer";
 import toastMessage from "../../constants/toastify";
 
@@ -18,15 +19,11 @@ function BuyDialog({ product, showDialog, closeDialog }) {
 
   const buy = async () => {
     setLoading(true);
-    let res=await buyProduct(product.id);
+    let res = await buyProduct(product.id);
     setLoading(false);
-    if(res===200){
-      toastMessage(
-        "success",
-        "Satın Alındı"
-      );
-    }
-    else{
+    if (res === 200) {
+      toastMessage("success", "Satın Alındı");
+    } else {
       toastMessage("error", "Bir hata ile karşılaşıldı!");
     }
     closeDialog();
@@ -42,12 +39,8 @@ function BuyDialog({ product, showDialog, closeDialog }) {
         }
       >
         <div className={styles.buyContent}>
-          <div className={styles.header}>
-            Satın Al
-          </div>
-          <div className={styles.description}>
-            Satın Almak istiyor musunuz?
-          </div>
+          <div className={styles.header}>Satın Al</div>
+          <div className={styles.description}>Satın Almak istiyor musunuz?</div>
           <div className={styles.buttons}>
             <button
               className={styles.cancelButton}

@@ -1,3 +1,5 @@
+//component showing login page components
+
 import React from "react";
 import Image from "next/image";
 

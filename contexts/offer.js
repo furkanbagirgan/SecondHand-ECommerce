@@ -1,10 +1,19 @@
+//context structure that stores offer data and transactions
+
 import React, { useContext } from "react";
-import { setGiveOfferService, setDeleteOfferService, setBuyService,setGivenOffersService,setReceivedOffersService,setOfferAcceptService,setOfferDeniedService } from "../services/offerService";
+import {
+  setGiveOfferService,
+  setDeleteOfferService,
+  setBuyService,
+  setGivenOffersService,
+  setReceivedOffersService,
+  setOfferAcceptService,
+  setOfferDeniedService,
+} from "../services/offerService";
 
 const OfferContext = React.createContext();
 
 const OfferProvider = ({ children }) => {
-
   const giveOffer = async (productId, price) => {
     const res = await setGiveOfferService(productId, price);
     return res;
@@ -49,7 +58,7 @@ const OfferProvider = ({ children }) => {
         getGivenOffers,
         getReceivedOffers,
         acceptOffer,
-        deniedOffer
+        deniedOffer,
       }}
     >
       {children}

@@ -1,59 +1,61 @@
+//styles for categories
+
 @import "../../styles/_mixin";
 
 .category {
-    width: 100%;
-    height: 41.4px;
+  width: 100%;
+  height: 41.4px;
+  display: flex;
+  justify-content: center;
+  margin-block: 30px;
+
+  @include tabletSmall() {
+    height: 33.2px;
+    margin-block: 20px;
+  }
+
+  .categoryContent {
     display: flex;
-    justify-content: center;
-    margin-block: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 77.1%;
+    height: 100%;
+    box-sizing: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     @include tabletSmall() {
-      height: 33.2px;
-      margin-block: 20px;
+      width: 94.66%;
     }
 
-    .categoryContent {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 77.1%;
+    span {
+      position: relative;
+      font-size: 18px;
+      line-height: 25px;
+      color: #525252;
+      font-weight: 600;
       height: 100%;
-      box-sizing: 100%;
-      border-bottom: 1px solid #e0e0e0;
-      overflow-x: scroll;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+      margin-left: 25px;
+      transition: all 0.4s ease-in-out;
 
-      @include tabletSmall() {
-        width: 94.66%;
+      &:hover {
+        cursor: pointer;
       }
 
-      span {
-        position: relative;
-        font-size: 18px;
-        line-height: 25px;
-        color: #525252;
-        font-weight: 600;
-        height: 100%;
-        margin-left: 25px;
-        transition: all 0.4s ease-in-out;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-        &:first-child {
-          margin-left: 0px;
-        }
-
-        &.active {
-          color: #4b9ce2;
-          border-bottom: 2px solid #4b9ce2;
-        }
+      &:first-child {
+        margin-left: 0px;
       }
-    }
-    .categoryContent::-webkit-scrollbar {
-      display: none;
+
+      &.active {
+        color: #4b9ce2;
+        border-bottom: 2px solid #4b9ce2;
+      }
     }
   }
+  .categoryContent::-webkit-scrollbar {
+    display: none;
+  }
+}

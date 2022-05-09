@@ -1,3 +1,5 @@
+//styles for buy dialog
+
 @import "../../styles/_mixin";
 
 .buyDialog {
@@ -29,64 +31,64 @@
       display: flex;
       width: 100%;
       justify-content: center;
-        align-items: center;
-        color: #525252;
-        font-size: 25px;
-        line-height: 23px;
-        font-weight: bold;
+      align-items: center;
+      color: #525252;
+      font-size: 25px;
+      line-height: 23px;
+      font-weight: bold;
 
-        @include tabletSmall() {
-          font-size: 18px;
-        }
+      @include tabletSmall() {
+        font-size: 18px;
+      }
     }
 
     .description {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        font-size: 15px;
-        line-height: 23px;
-        color: #555555;
-        margin-top: 12px;
-        margin-bottom: 20px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      line-height: 23px;
+      color: #555555;
+      margin-top: 12px;
+      margin-bottom: 20px;
     }
 
     .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      height: fit-content;
+
+      button {
+        width: 315px;
+        height: 45px;
+        border: 0px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
-        width: 100%;
-        height: fit-content;
 
-        button {
-            width: 315px;
-            height: 45px;
-            border: 0px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover {
-                cursor: pointer;
-                opacity: 0.8;
-            }
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
         }
+      }
 
-        .confirmButton {
-            color: #fff;
-            background-color: #4b9ce2;
-        }
+      .confirmButton {
+        color: #fff;
+        background-color: #4b9ce2;
+      }
 
-        .cancelButton {
-            color: #4b9ce2;
-            background-color: #F0F8FF;
-        }
+      .cancelButton {
+        color: #4b9ce2;
+        background-color: #f0f8ff;
+      }
     }
   }
 

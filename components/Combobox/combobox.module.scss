@@ -1,0 +1,43 @@
+//styles for combobox
+
+.content {
+  margin-top: 5px;
+  position: relative;
+
+  .options {
+    position: absolute;
+    overflow: auto;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+    color: #3e3e3e;
+    width: 100%;
+    max-height: 228px;
+    padding-inline: 6px;
+    padding-block: 12px;
+    box-shadow: 0px 3px 12px #1e36482e;
+    border: none;
+    outline: 0px;
+    list-style: none;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    .option {
+      cursor: pointer;
+      padding-inline: 6px;
+    }
+
+    .optionActive {
+      width: 98%;
+      padding-block: 8px;
+      padding-inline: 10px;
+      color: #4b9ce2;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+    }
+  }
+}

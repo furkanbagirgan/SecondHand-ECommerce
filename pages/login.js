@@ -1,3 +1,5 @@
+//main page showing login
+
 import React, { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -16,7 +18,6 @@ function Login() {
     }
   }, []);
 
-  //Here, the components of the first opened page are printed on the screen.
   return (
     <>
       <Head>
