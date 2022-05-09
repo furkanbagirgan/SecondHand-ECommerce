@@ -1,7 +1,7 @@
 # Graduation Project
 This e-commerce app project is built as Patika & Protein React Bootcamp graduate project.
 
-Live Demo is Here: [Live Demo](https://react-bootcamp-week6-advanced-marvelapi.vercel.app/)
+Live Demo is Here: [Live Demo](https://graduation-project-react-bootcamp.vercel.app/)
 
 ## Introduction
 This project, made with Reactjs and Nextjs, is a second-hand site that allows users to register and sell products and buy products. The project is responsive for desktop and mobile.
