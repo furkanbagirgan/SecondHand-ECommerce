@@ -27,54 +27,74 @@ In the project, operations are carried out over the api and these operations are
 - Headless UI
 - Vercel
 
+## Installation
+1.Clone Project
+```
+git clone https://github.com/furkanbagirgan/GraduationProject-ReactBootcamp.git
+```
+2.Install the Necessary Packages for Project
+```
+//for npm
+npm install
+//for yarn
+yarn install
+```
+3.Run Project To Localhost
+```
+//for npm
+npm run dev
+//for yarn
+yarn dev
+```
+
 ## Screens for Desktop
 ### Login Page
 <kbd><img src="screens/loginPage.png" width="100%"></kbd>
 
 ### Register Page
-<img src="screens/registerPage.png" width="100%">
+<kbd><img src="screens/registerPage.png" width="100%"></kbd>
 
 ### Home Page
-<img src="screens/homePage.png" width="100%">
+<kbd><img src="screens/homePage.png" width="100%"></kbd>
 
 ### Product Detail Page
-<img src="screens/productDetailPage.png" width="100%">
+<kbd><img src="screens/productDetailPage.png" width="100%"></kbd>
 
 ### Offer Dialog
-<img src="screens/offerDialog.png" width="100%">
+<kbd><img src="screens/offerDialog.png" width="100%"></kbd>
 
 ### Buy Dilaog
-<img src="screens/buyDialog.png" width="100%">
+<kbd><img src="screens/buyDialog.png" width="100%"></kbd>
 
 ### Account Page
-<img src="screens/accountPage.png" width="100%">
-<img src="screens/accountPage2.png" width="100%">
+<kbd><img src="screens/accountPage.png" width="100%"></kbd>
+<kbd><img src="screens/accountPage2.png" width="100%"></kbd>
 
 ### Add Product Page
-<img src="screens/addProductPage.png" width="100%">
-<img src="screens/addProductPage2.png" width="100%">
+<kbd><img src="screens/addProductPage.png" width="100%"></kbd>
+<kbd><img src="screens/addProductPage2.png" width="100%"></kbd>
 
 ## Screens for Mobile
 ### Login Page
-<img src="screens/loginPageMobile.png" width="30%">
+<kbd><img src="screens/loginPageMobile.png" width="30%"></kbd>
 
 ### Register Page
-<img src="screens/registerPageMobile.png" width="30%">
+<kbd><img src="screens/registerPageMobile.png" width="30%"></kbd>
 
 ### Home Page
-<img src="screens/homePageMobile.png" width="30%">
+<kbd><img src="screens/homePageMobile.png" width="30%"></kbd>
 
 ### Product Detail Page
-<img src="screens/productDetailPageMobile.png" width="30%"><img src="screens/productDetailPageMobile(2).png" width="30%">
+<kbd><img src="screens/productDetailPageMobile.png" width="30%"><img src="screens/productDetailPageMobile(2).png" width="30%"></kbd>
 
 ### Offer Dialog
-<img src="screens/offerDialogMobile.png" width="30%">
+<kbd><img src="screens/offerDialogMobile.png" width="30%"></kbd>
 
 ### Buy Dilaog
-<img src="screens/buyDialogMobile.png" width="30%">
+<kbd><img src="screens/buyDialogMobile.png" width="30%"></kbd>
 
 ### Account Page
-<img src="screens/accountPageMobile.png" width="30%">
+<kbd><img src="screens/accountPageMobile.png" width="30%"></kbd>
 
 ### Add Product Page
-<img src="screens/addProductPageMobile.png" width="30%"><img src="screens/addProductPageMobile2.png" width="30%">
+<kbd><img src="screens/addProductPageMobile.png" width="30%"><img src="screens/addProductPageMobile2.png" width="30%"></kbd>
