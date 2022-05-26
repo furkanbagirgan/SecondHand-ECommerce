@@ -4,15 +4,12 @@
 @import "react-toastify/dist/ReactToastify.css";
 @import "./_mixin";
 
-body {
-  font-family: "Nunito" !important;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  font-family: "Nunito", sans-serif !important;
+  
   .main{
     position: absolute;
     top: 0;
