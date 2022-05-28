@@ -101,7 +101,7 @@ function UserOffers({ showError }) {
                 <div key={offer.id} className={styles.offerItem}>
                   <div className={styles.offerDetail}>
                     <div className={styles.productImg}>
-                      {offer.product.image?.url ? (
+                      {offer.product?.image?.url ? (
                         <img
                           className={styles.productPhoto}
                           src={
@@ -126,7 +126,7 @@ function UserOffers({ showError }) {
                     </div>
                     <div className={styles.productDetail}>
                       <span className={styles.productName}>
-                        {offer.product.name
+                        {offer.product?.name
                           ? offer.product.name
                           : "Belirtilmemiş"}
                       </span>
@@ -145,7 +145,7 @@ function UserOffers({ showError }) {
                   </div>
                   <div className={styles.offerStatus}>
                     {offer.isStatus != null ? (
-                      offer.product.isSold ? (
+                      offer.product?.isSold ? (
                         selectedOption === "givenOffers" ? (
                           <span className={styles.solded}>Satın Alındı</span>
                         ) : (
