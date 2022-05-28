@@ -1,5 +1,5 @@
-# Graduation Project
-This e-commerce app project is built as Patika & Protein React Bootcamp graduate project.
+# SecondHand-ECommerce
+This e-commerce app project is built as Patika React Bootcamp graduate project.
 
 Live Demo is Here: [Live Demo](https://graduation-project-react-bootcamp.vercel.app/)
 
@@ -23,6 +23,8 @@ In the project, operations are carried out over the api and these operations are
 - Context API
 - SASS
 - Axios
+- Formik
+- Yup
 - Toastify
 - Headless UI (just Listbox)
 - Vercel
