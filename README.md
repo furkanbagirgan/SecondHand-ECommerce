@@ -1,4 +1,4 @@
-# SecondHand-ECommerce
+# Second Hand E-Commerce
 This e-commerce app project is built as Patika React Bootcamp graduate project.
 
 Live Demo is Here: [Live Demo](https://graduation-project-react-bootcamp.vercel.app/)
