@@ -32,7 +32,7 @@ In the project, operations are carried out over the api and these operations are
 ## Installation
 1.Clone Project
 ```
-git clone https://github.com/furkanbagirgan/GraduationProject-ReactBootcamp.git
+git clone https://github.com/furkanbagirgan/SecondHand-ECommerce.git
 ```
 2.Install the Necessary Packages for Project
 ```
